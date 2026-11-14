@@ -1,0 +1,15 @@
+[Unit]
+Description=Gunicorn daemon for Baby Shower Django Application
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/babyshower
+Environment="PATH=/var/www/babyshower/venv/bin"
+ExecStart=/var/www/babyshower/venv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 babyshower.wsgi:application
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
