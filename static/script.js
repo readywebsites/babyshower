@@ -401,43 +401,72 @@ function setFamilyPose(timeParActive) {
 }
 
 function initFamilyScrollTrigger() {
-  const triggerSec = document.getElementById('familySectionTrigger') || document.getElementById('family');
-  if (!triggerSec) return;
+  const familySec = document.getElementById('family');
+  const triggerSec = document.getElementById('familySectionTrigger') || familySec;
+  const card1 = document.getElementById('cardDadaDadi');
+  if (!familySec && !triggerSec) return;
 
   let isMastiActive = false;
   let ticking = false;
 
   function evaluateFamilyScroll() {
-    const rect = triggerSec.getBoundingClientRect();
+    const sec = familySec || triggerSec;
+    const secRect = sec.getBoundingClientRect();
     const vh = window.innerHeight || document.documentElement.clientHeight;
 
-    // When scrolling down into the section:
-    // As cards enter middle viewport (rect.top <= vh * 0.65): activate Masti mode!
-    if (rect.top <= vh * 0.65 && rect.bottom >= vh * 0.15) {
-      if (!isMastiActive) {
-        isMastiActive = true;
-        setFamilyPose(true);
-      }
-    }
-    // When scrolling back UP above the section:
-    // Resets cleanly back to Namaste pose!
-    else if (rect.top > vh * 0.78) {
+    // If completely above or below screen:
+    if (secRect.bottom < 0 || secRect.top > vh) {
       if (isMastiActive) {
         isMastiActive = false;
         setFamilyPose(false);
       }
+      ticking = false;
+      return;
     }
-    // When scrolled far past below the section:
-    else if (rect.bottom < 0) {
-      if (isMastiActive) {
-        isMastiActive = false;
-        setFamilyPose(false);
+
+    // Midway trigger calculation:
+    // When scrolling down, keep in Namaste mode while entering so guests clearly see Namaste.
+    // Trigger Masti mode only when scrolled midway through the section/cards!
+    let triggerMasti = false;
+    let triggerNamaste = false;
+
+    if (card1) {
+      const cRect = card1.getBoundingClientRect();
+      const cardCenter = cRect.top + (cRect.height * 0.5);
+
+      // Masti triggers when card center reaches middle of viewport (or card top <= 38% vh)
+      // AND section hasn't scrolled completely off
+      if ((cardCenter <= vh * 0.52 || cRect.top <= vh * 0.38) && secRect.bottom >= vh * 0.20) {
+        triggerMasti = true;
       }
+
+      // Reset to Namaste when scrolling back up so card center drops below 62% vh
+      if (cardCenter > vh * 0.62 && cRect.top > vh * 0.48) {
+        triggerNamaste = true;
+      }
+    } else {
+      // Fallback based on section midpoint
+      const secMidpoint = secRect.top + (secRect.height * 0.5);
+      if (secMidpoint <= vh * 0.52 && secRect.bottom >= vh * 0.20) {
+        triggerMasti = true;
+      }
+      if (secMidpoint > vh * 0.65) {
+        triggerNamaste = true;
+      }
+    }
+
+    if (triggerMasti && !isMastiActive) {
+      isMastiActive = true;
+      setFamilyPose(true);
+    } else if (triggerNamaste && isMastiActive) {
+      isMastiActive = false;
+      setFamilyPose(false);
     }
 
     ticking = false;
   }
 
+  // Bind scroll, touchmove and resize listeners
   window.addEventListener('scroll', () => {
     if (!ticking) {
       requestAnimationFrame(evaluateFamilyScroll);
@@ -452,7 +481,15 @@ function initFamilyScrollTrigger() {
     }
   }, { passive: true });
 
-  // Initial check
+  window.addEventListener('resize', () => {
+    if (!ticking) {
+      requestAnimationFrame(evaluateFamilyScroll);
+      ticking = true;
+    }
+  });
+
+  // Ensure initial Namaste state on load
+  setFamilyPose(false);
   evaluateFamilyScroll();
 }
 
