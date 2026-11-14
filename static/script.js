@@ -282,24 +282,72 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
-// 7. Hero Video Scroll-Based Scrubbing (Front & Back Play)
+// 7. Hero Video Scroll-Based Scrubbing (Front & Back Play with Optimized Responsive Loading)
 function initHeroVideoScrub() {
   const desktopVid = document.getElementById('heroVideoDesktop');
   const mobileVid = document.getElementById('heroVideoMobile');
   if (!desktopVid && !mobileVid) return;
 
-  function prepVideo(vid) {
+  function getActiveVideo() {
+    const isMobile = window.innerWidth < 768;
+    return isMobile ? mobileVid : desktopVid;
+  }
+
+  function activateVideo(vid) {
+    if (!vid) return;
+    if (vid.preload !== 'auto') {
+      vid.preload = 'auto';
+    }
+    vid.muted = true;
+    vid.playsInline = true;
+    if (vid.paused && vid.readyState < 1) {
+      vid.load();
+    }
+  }
+
+  // Only load and buffer the active video for the detected viewport (saves 50%+ bandwidth)
+  const initialActive = getActiveVideo();
+  if (initialActive) {
+    activateVideo(initialActive);
+  }
+
+  // Smooth seek throttle to prevent decoder backpressure during rapid scrolling
+  let isSeeking = false;
+  let nextSeekTime = null;
+
+  function performSeek(vid, targetTime) {
+    if (!vid || isNaN(vid.duration) || vid.duration <= 0) return;
+    if (Math.abs(vid.currentTime - targetTime) < 0.02) return;
+
+    if (isSeeking || vid.seeking) {
+      nextSeekTime = targetTime;
+      return;
+    }
+
+    isSeeking = true;
+    vid.currentTime = targetTime;
+  }
+
+  function onSeekFinished() {
+    isSeeking = false;
+    if (nextSeekTime !== null) {
+      const t = nextSeekTime;
+      nextSeekTime = null;
+      const active = getActiveVideo();
+      if (active) performSeek(active, t);
+    }
+  }
+
+  [desktopVid, mobileVid].forEach(vid => {
     if (!vid) return;
     vid.muted = true;
     vid.playsInline = true;
-    vid.pause();
+    vid.addEventListener('seeked', onSeekFinished);
     vid.addEventListener('loadedmetadata', () => {
       vid.currentTime = 0;
       vid.pause();
     });
-  }
-  prepVideo(desktopVid);
-  prepVideo(mobileVid);
+  });
 
   let ticking = false;
 
@@ -307,7 +355,16 @@ function initHeroVideoScrub() {
     const isMobile = window.innerWidth < 768;
     const activeVid = isMobile ? mobileVid : desktopVid;
 
-    if (!activeVid || isNaN(activeVid.duration) || activeVid.duration <= 0) {
+    if (!activeVid) {
+      ticking = false;
+      return;
+    }
+
+    if (activeVid.preload !== 'auto') {
+      activateVideo(activeVid);
+    }
+
+    if (isNaN(activeVid.duration) || activeVid.duration <= 0) {
       ticking = false;
       return;
     }
@@ -318,10 +375,7 @@ function initHeroVideoScrub() {
     const progress = Math.min(1, Math.max(0, scrollY / scrubRange));
     const targetTime = progress * activeVid.duration;
 
-    if (Math.abs(activeVid.currentTime - targetTime) > 0.02) {
-      activeVid.currentTime = targetTime;
-    }
-
+    performSeek(activeVid, targetTime);
     ticking = false;
   }
 
@@ -340,11 +394,13 @@ function initHeroVideoScrub() {
   }, { passive: true });
 
   window.addEventListener('resize', () => {
+    const active = getActiveVideo();
+    if (active) activateVideo(active);
     if (!ticking) {
       requestAnimationFrame(updateVideoScrub);
       ticking = true;
     }
-  }, { passive: true });
+  });
 
   // Initial calculation
   updateVideoScrub();

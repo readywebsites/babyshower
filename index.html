@@ -25,6 +25,10 @@
   <meta name="twitter:description" content="You are cordially invited to celebrate the auspicious Shrimant Sanskar of Rajil &amp; Khushbu! Pahochij Jajo Time Par!" />
   <meta name="twitter:image" content="assets/og%20image.jpg" />
 
+  <!-- High-Priority Preload for Hero Poster WebP (Instant Display, Zero Wait) -->
+  <link rel="preload" as="image" href="assets/hero_poster_desktop.webp" media="(min-width: 768px)" type="image/webp" />
+  <link rel="preload" as="image" href="assets/hero_poster_mobile.webp" media="(max-width: 767px)" type="image/webp" />
+
   <!-- Google Fonts: Cinzel Decorative, Playfair Display, Great Vibes, Plus Jakarta Sans & Noto Serif Gujarati -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -152,9 +156,10 @@
           id="heroVideoDesktop"
           class="hidden md:block w-full h-auto object-cover select-none pointer-events-none"
           src="assets/animate%20hero.mp4"
+          poster="assets/hero_poster_desktop.webp"
           playsinline
           muted
-          preload="auto"
+          preload="none"
           webkit-playsinline
         ></video>
 
@@ -163,9 +168,10 @@
           id="heroVideoMobile"
           class="block md:hidden w-full h-auto object-cover select-none pointer-events-none"
           src="assets/animate%20hero%20vertical.mp4"
+          poster="assets/hero_poster_mobile.webp"
           playsinline
           muted
-          preload="auto"
+          preload="none"
           webkit-playsinline
         ></video>
         
