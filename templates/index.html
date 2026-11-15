@@ -3,9 +3,9 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baby Shower Celebration | Rajil & Khushbu</title>
-  <meta name="description" content="You are cordially invited to celebrate the auspicious Baby Shower (Shrimant Sanskar) celebration of Rajil & Khushbu." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Baby Shower Celebration | Rajil &amp; Khushbu</title>
+  <meta name="description" content="You are cordially invited to celebrate the auspicious Baby Shower (Shrimant Sanskar) celebration of Rajil &amp; Khushbu! 19th Nov 2026 at The Grand Murli, Surat." />
 
   <!-- Favicon from assets folder -->
   <link rel="icon" type="image/jpeg" href="{% static 'assets/favicon.jpg' %}" />
@@ -14,7 +14,7 @@
   <!-- OpenGraph Meta Tags for Link Sharing (WhatsApp, Facebook, iMessage, Instagram) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Baby Shower Celebration | Rajil &amp; Khushbu" />
-  <meta property="og:description" content="You are cordially invited to celebrate the auspicious Shrimant Sanskar of Rajil &amp; Khushbu! 19th Nov 2026 at The Grand Murli, Surat. Pahochij Jajo Time Par!" />
+  <meta property="og:description" content="Auspicious Shrimant Sanskar of Rajil &amp; Khushbu! 19th Nov 2026 at The Grand Murli, Surat. Ceremony 11:00 AM &bull; Lunch 12:30 PM." />
   <meta property="og:image" content="{% static 'assets/og image.jpg' %}" />
   <meta property="og:image:secure_url" content="{% static 'assets/og image.jpg' %}" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -23,7 +23,7 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Baby Shower Celebration | Rajil &amp; Khushbu" />
-  <meta name="twitter:description" content="You are cordially invited to celebrate the auspicious Shrimant Sanskar of Rajil &amp; Khushbu! Pahochij Jajo Time Par!" />
+  <meta name="twitter:description" content="Auspicious Shrimant Sanskar of Rajil &amp; Khushbu! 19th Nov 2026 at The Grand Murli, Surat. Ceremony 11:00 AM &bull; Lunch 12:30 PM." />
   <meta name="twitter:image" content="{% static 'assets/og image.jpg' %}" />
 
   <!-- High-Priority Preload for Hero Poster WebP (Instant Display, Zero Wait) -->
@@ -61,11 +61,13 @@
               500: '#A67C52',
               600: '#8C6239',
               700: '#6E4B28',
+              800: '#53361A',
             },
             maroon: {
               700: '#8E223D',
               800: '#7A1C33',
               900: '#4E0E1E',
+              950: '#340813',
             },
           },
           fontFamily: {
@@ -80,742 +82,224 @@
     };
   </script>
 </head>
-<body class="font-sans antialiased selection:bg-gold-300 selection:text-maroon-900">
 
-  <!-- Fullscreen Falling Rose Petals Canvas -->
-  <canvas id="petals-canvas" class="fixed inset-0 pointer-events-none z-30"></canvas>
-
-  <!-- Background Music Audio Element -->
-  <audio id="bg-music" loop preload="auto">
-    <source src="{% static 'background_music.mp3' %}" type="audio/mp3">
-  </audio>
+<body class="bg-[#FDF8F0] text-[#4A3723] antialiased selection:bg-gold-400 selection:text-maroon-950 min-h-screen">
 
   <!-- ========================================================================
-       STICKY GLASSMORPHIC TOP BAR (MATCHING VIDEO HEADER)
+       TOP BLUR NAVIGATION BAR (STREAMLINED & ROYAL)
        ======================================================================== -->
-  <header class="sticky top-0 z-50 bg-ivory-50/90 backdrop-blur-md border-b border-gold-500/25 shadow-sm transition-all duration-300">
-    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between">
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#FDF8F0]/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
       
-      <!-- Left: Logo "Baby Shower" -->
-      <a href="#hero" class="flex items-center gap-2.5 group">
-        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 via-yellow-200 to-amber-600 p-[2px] shadow-sm group-hover:scale-105 transition-transform flex-shrink-0">
-          <div class="w-full h-full rounded-full bg-maroon-800 flex items-center justify-center font-editorial font-bold text-gold-300 text-sm">
-            👶
-          </div>
-        </div>
-        <span class="font-script text-2xl sm:text-[1.85rem] text-gold-600 leading-none block group-hover:text-maroon-800 transition-colors pt-1">
-          Baby Shower
+      <!-- Logo: Clean "Baby Shower" with couple subtitle -->
+      <a href="#experience" class="flex items-center gap-2 group">
+        <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-tr from-maroon-900 to-gold-500 flex items-center justify-center text-ivory-50 text-xs sm:text-sm font-bold shadow-sm">
+          🕉️
         </span>
+        <div class="text-left">
+          <span class="font-serifTitle font-bold text-base sm:text-lg tracking-wide gold-foil-text block leading-tight">
+            Baby Shower
+          </span>
+          <span class="text-[10px] sm:text-xs font-semibold text-gold-700 block -mt-0.5">
+            Rajil &amp; Khushbu &bull; 19 Nov 2026
+          </span>
+        </div>
       </a>
 
-      <!-- Center: Clean Essential Navigation Links -->
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gold-700">
-        <a href="#hero" class="hover:text-maroon-800 transition-colors">Home</a>
-        <a href="#venue" class="hover:text-maroon-800 transition-colors">The Venue</a>
-        <a href="#feast" class="hover:text-maroon-800 transition-colors font-bold text-maroon-800">Feast (12:30 PM)</a>
-        <a href="#family" class="hover:text-maroon-800 transition-colors">Pahochij Jajo</a>
-        <a href="#predict" class="hover:text-maroon-800 transition-colors">Poll</a>
-        <a href="#location" class="hover:text-maroon-800 transition-colors">Location</a>
-        <a href="#wishes" class="hover:text-maroon-800 transition-colors">Blessings</a>
-      </nav>
-
-      <!-- Right: Music Toggle and Clean RSVP Button -->
-      <div class="flex items-center gap-3">
-        <!-- Music Toggle Button with Sound Wave Visualizer -->
-        <button id="music-toggle-btn" type="button" aria-label="Toggle Background Music" title="Play/Pause Celebratory Music"
-          class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ivory-100 hover:bg-ivory-200 border border-gold-500/40 text-gold-700 text-xs font-semibold shadow-xs transition cursor-pointer">
-          <span class="text-base">🎵</span>
-          <span class="hidden sm:inline">Music</span>
-          <div id="sound-visualizer" class="flex items-end gap-[2px] h-4 paused">
-            <div class="sound-wave-bar"></div>
-            <div class="sound-wave-bar"></div>
-            <div class="sound-wave-bar"></div>
-            <div class="sound-wave-bar"></div>
-            <div class="sound-wave-bar"></div>
-          </div>
+      <!-- Right Controls: Shehnai Audio & Quick Map Button -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <!-- Shehnai Ambient Music Button -->
+        <button
+          id="musicToggleBtn"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold-500/40 bg-white/80 hover:bg-ivory-100 text-maroon-900 text-xs font-semibold shadow-sm transition-all active:scale-95"
+          title="Toggle Ambient Shehnai Music"
+          aria-label="Toggle Shehnai Music"
+        >
+          <span id="musicIconWave" class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-maroon-800"></span>
+          </span>
+          <span id="musicLabel" class="hidden sm:inline">Shehnai</span>
         </button>
 
-        <!-- RSVP Pill Button -->
-        <button type="button" onclick="document.getElementById('rsvp-dialog').showModal()"
-          class="btn-gold-metallic text-maroon-900 font-bold text-xs sm:text-sm px-5 py-2 rounded-full cursor-pointer shadow-sm">
-          RSVP
-        </button>
+        <!-- Quick Maps Navigation Button in Header -->
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=The+Grand+Murli+Near+Mahavir+College+Vesu+Surat"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-gold-metallic text-maroon-950 font-bold text-xs px-3.5 sm:px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 shadow-sm hover:scale-105 active:scale-95 transition-transform"
+          title="Open Location in Google Maps"
+        >
+          <span class="text-sm">📍</span>
+          <span>Maps</span>
+        </a>
       </div>
+
     </div>
   </header>
 
-  <main>
-    <!-- ========================================================================
-         SECTION 1: HERO (100% FULL WIDTH EDGE-TO-EDGE WITH PARALLAX)
-         ======================================================================== -->
-    <section id="hero" class="w-full relative overflow-hidden pt-0 pb-12 sm:pb-16 border-b border-gold-500/25">
-      
-      <!-- Full-Width Edge-to-Edge Hero Video Banner Container (Scroll-Based Front & Back Play) -->
-      <div id="heroVideoWrapper" class="w-full relative overflow-hidden select-none bg-ivory-50">
-        <!-- Desktop Video (1280x720 Landscape: animate hero.mp4) -->
-        <video
-          id="heroVideoDesktop"
-          class="hidden md:block w-full h-auto object-cover select-none pointer-events-none"
-          src="{% static 'assets/animate hero.mp4' %}"
-          poster="{% static 'assets/hero_poster_desktop.webp' %}"
-          playsinline
-          muted
-          preload="none"
-          webkit-playsinline
-        ></video>
 
-        <!-- Mobile Video (720x1280 Vertical: animate hero vertical.mp4) -->
-        <video
-          id="heroVideoMobile"
-          class="block md:hidden w-full h-auto object-cover select-none pointer-events-none"
-          src="{% static 'assets/animate hero vertical.mp4' %}"
-          poster="{% static 'assets/hero_poster_mobile.webp' %}"
-          playsinline
-          muted
-          preload="none"
-          webkit-playsinline
-        ></video>
+  <!-- ========================================================================
+       MAIN SCROLL RUNWAY & FIXED CONTAINER STAGE
+       ======================================================================== -->
+  <main id="experience" class="relative w-full">
+    
+    <!-- Scroll Runway Track (Gives scroll length for video scrub & transition) -->
+    <div id="scrollRunway" class="relative w-full" style="height: 235vh;">
+
+      <!-- Sticky Full-Screen Stage (Stays locked on screen as visitor scrolls) -->
+      <div id="stickyStage" class="sticky top-0 w-full h-[100dvh] overflow-hidden flex flex-col justify-between select-none pt-14 sm:pt-16">
         
-        <!-- Seamless bottom silk gradient drape overlay blending into the page content -->
-        <div class="absolute bottom-0 inset-x-0 h-24 sm:h-36 bg-gradient-to-t from-ivory-50 via-ivory-50/80 to-transparent pointer-events-none"></div>
-      </div>
-
-      <!-- Rotating Faint Gold Mandala Corner Watermarks -->
-      <div class="pointer-events-none absolute top-12 left-0 w-72 sm:w-96 h-72 sm:h-96 opacity-15 animate-mandala-slow">
-        <svg viewBox="0 0 200 200" class="w-full h-full text-gold-500" fill="none" stroke="currentColor">
-          <circle cx="100" cy="100" r="92" stroke-width="1" stroke-dasharray="4 3"/>
-          <circle cx="100" cy="100" r="76" stroke-width="1.5"/>
-          <circle cx="100" cy="100" r="58" stroke-width="1" stroke-dasharray="2 2"/>
-          <circle cx="100" cy="100" r="38" stroke-width="1.5"/>
-          <g stroke-width="1">
-            <path d="M100 8 L108 38 L100 50 L92 38 Z"/>
-            <path d="M100 192 L108 162 L100 150 L92 162 Z"/>
-            <path d="M8 100 L38 92 L50 100 L38 108 Z"/>
-            <path d="M192 100 L162 92 L150 100 L162 108 Z"/>
-          </g>
-        </svg>
-      </div>
-
-      <div class="pointer-events-none absolute top-12 right-0 w-72 sm:w-96 h-72 sm:h-96 opacity-15 animate-mandala-reverse">
-        <svg viewBox="0 0 200 200" class="w-full h-full text-gold-500" fill="none" stroke="currentColor">
-          <circle cx="100" cy="100" r="92" stroke-width="1" stroke-dasharray="4 3"/>
-          <circle cx="100" cy="100" r="74" stroke-width="1.5"/>
-          <circle cx="100" cy="100" r="52" stroke-width="1"/>
-          <polygon points="100,15 122,78 185,100 122,122 100,185 78,122 15,100 78,78" stroke-width="1"/>
-        </svg>
-      </div>
-
-      <!-- Twinkling Sparkles & Floating Particles Layer -->
-      <div id="heroParticles" class="pointer-events-none absolute inset-0 overflow-hidden z-10"></div>
-
-      <!-- Countdown Strip & Quick Actions Container (gracefully positioned with negative top margin) -->
-      <div class="w-full max-w-5xl mx-auto px-4 sm:px-6 -mt-8 sm:-mt-14 relative z-20 flex flex-col items-center">
-        
-        <!-- Cultural Badge -->
-        <div class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-white/95 border border-gold-500/40 text-gold-700 text-xs sm:text-sm font-semibold tracking-wider shadow-sm backdrop-blur-xs">
-          <span>🌸</span>
-          <span class="font-gujarati font-bold text-maroon-800 cultural-title-text">શ્રીમંત સંસ્કાર / Shrimant Sanskar</span>
-          <span>🌸</span>
+        <!-- Top Full-Width Swaying Marigold Garland Toran -->
+        <div class="w-full max-w-5xl mx-auto pointer-events-none select-none px-4 -mt-1 sm:-mt-2 z-20">
+          <img src="{% static 'assets/garland_transparent.png' %}" alt="Marigold Toran Garland" class="w-full h-auto drop-shadow-sm max-h-12 sm:max-h-16 object-contain mx-auto animate-garland">
         </div>
 
-        <!-- Live Event Countdown Strip -->
-        <div class="mt-4 gold-double-wire-frame rounded-2xl px-5 sm:px-8 py-3.5 flex flex-wrap items-center justify-center gap-4 sm:gap-6 bg-white/90 backdrop-blur-sm shadow-md">
-          <span class="text-xs uppercase tracking-[0.2em] font-bold text-maroon-800 w-full sm:w-auto text-center">
-            Celebration Begins In
-          </span>
-          <div class="flex items-center gap-2 sm:gap-3.5">
-            <div class="text-center min-w-[50px] sm:min-w-[62px] bg-ivory-50 rounded-xl py-1.5 px-2 border border-gold-500/40 shadow-xs">
-              <div id="cdDays" class="font-editorial font-bold text-lg sm:text-2xl text-maroon-800">00</div>
-              <div class="text-[9px] uppercase tracking-wider text-gold-700 font-semibold">Days</div>
+        <!-- Central Stage Canvas Container -->
+        <div class="flex-1 w-full max-w-5xl mx-auto px-3 sm:px-6 py-2 flex items-center justify-center relative">
+
+          <!-- ================================================================
+               LAYER 1: HERO VIDEO (SCRUBS FORWARD/BACKWARD ON SCROLL)
+               ================================================================ -->
+          <div id="videoStage" class="w-full relative rounded-3xl overflow-hidden shadow-2xl border-2 border-gold-500/35 bg-stone-900 transition-all duration-300">
+            
+            <!-- Desktop Video (1280x720 Landscape: animate hero.mp4) -->
+            <video
+              id="heroVideoDesktop"
+              class="hidden md:block w-full h-auto object-cover select-none pointer-events-none"
+              src="{% static 'assets/animate hero.mp4' %}"
+              poster="{% static 'assets/hero_poster_desktop.webp' %}"
+              playsinline
+              muted
+              preload="none"
+              webkit-playsinline
+            ></video>
+
+            <!-- Mobile Video (720x1280 Vertical: animate hero vertical.mp4) -->
+            <video
+              id="heroVideoMobile"
+              class="block md:hidden w-full h-auto object-cover select-none pointer-events-none max-h-[72dvh]"
+              src="{% static 'assets/animate hero vertical.mp4' %}"
+              poster="{% static 'assets/hero_poster_mobile.webp' %}"
+              playsinline
+              muted
+              preload="none"
+              webkit-playsinline
+            ></video>
+
+            <!-- Bottom Gradient Shade for Smoothness -->
+            <div class="absolute bottom-0 inset-x-0 h-16 sm:h-24 bg-gradient-to-t from-stone-900/60 to-transparent pointer-events-none"></div>
+
+            <!-- Scroll Prompt Hint (fades out as soon as user starts scrolling) -->
+            <div id="scrollHintPrompt" class="absolute bottom-4 inset-x-0 flex flex-col items-center justify-center pointer-events-none text-white drop-shadow-md transition-opacity duration-300">
+              <span class="text-xs sm:text-sm font-semibold tracking-wider uppercase text-gold-300 bg-stone-950/70 px-4 py-1.5 rounded-full border border-gold-400/40 backdrop-blur-sm animate-pulse">
+                Scroll to explore invitation ↓
+              </span>
             </div>
-            <span class="text-gold-600 font-bold">:</span>
-            <div class="text-center min-w-[50px] sm:min-w-[62px] bg-ivory-50 rounded-xl py-1.5 px-2 border border-gold-500/40 shadow-xs">
-              <div id="cdHours" class="font-editorial font-bold text-lg sm:text-2xl text-maroon-800">00</div>
-              <div class="text-[9px] uppercase tracking-wider text-gold-700 font-semibold">Hours</div>
-            </div>
-            <span class="text-gold-600 font-bold">:</span>
-            <div class="text-center min-w-[50px] sm:min-w-[62px] bg-ivory-50 rounded-xl py-1.5 px-2 border border-gold-500/40 shadow-xs">
-              <div id="cdMins" class="font-editorial font-bold text-lg sm:text-2xl text-maroon-800">00</div>
-              <div class="text-[9px] uppercase tracking-wider text-gold-700 font-semibold">Mins</div>
-            </div>
-            <span class="text-gold-600 font-bold">:</span>
-            <div class="text-center min-w-[50px] sm:min-w-[62px] bg-ivory-50 rounded-xl py-1.5 px-2 border border-gold-500/40 shadow-xs">
-              <div id="cdSecs" class="font-editorial font-bold text-lg sm:text-2xl text-maroon-800">00</div>
-              <div class="text-[9px] uppercase tracking-wider text-gold-700 font-semibold">Secs</div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Quick Actions -->
-        <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
-          <button type="button" onclick="document.getElementById('rsvp-dialog').showModal()"
-            class="btn-gold-metallic text-maroon-900 font-bold text-sm px-7 py-2.5 rounded-full cursor-pointer flex items-center gap-2">
-            <span>💌</span>
-            <span>RSVP Your Attendance</span>
-          </button>
-          <button type="button" onclick="downloadCalendarEvent()"
-            class="px-6 py-2.5 rounded-full bg-white hover:bg-ivory-100 border border-gold-500/60 text-gold-700 text-sm font-semibold shadow-xs transition flex items-center gap-2 cursor-pointer">
-            <span>📅</span>
-            <span>Save the Date (.ics)</span>
-          </button>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================================
-         SECTION 2: THE VENUE (FULL WIDTH - WITH SUBTLE DEPTH PARALLAX)
-         ======================================================================== -->
-    <section id="venue" class="w-full relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-gold-500/25 overflow-hidden">
-      <div class="w-full max-w-6xl mx-auto text-center reveal-on-scroll">
-        
-        <!-- Section Title with video-exact flourishes -->
-        <h2 class="font-serifTitle font-extrabold text-3xl sm:text-5xl md:text-[3.25rem] gold-foil-text leading-tight">
-          The Venue
-        </h2>
-        <div class="flex items-center justify-center gap-3 mt-2 text-gold-600">
-          <div class="w-12 sm:w-20 h-[1.5px] bg-gradient-to-r from-transparent to-gold-500"></div>
-          <p class="font-editorial font-bold text-lg sm:text-2xl text-gold-700 tracking-wide venue-name-text">
-            The Grand Murli
-          </p>
-          <div class="w-12 sm:w-20 h-[1.5px] bg-gradient-to-l from-transparent to-gold-500"></div>
-        </div>
-
-        <!-- Rounded Stage Showcase Card using "second section.jpg" -->
-        <div class="mt-8 sm:mt-12 gold-double-wire-frame rounded-3xl p-3 sm:p-5 max-w-5xl mx-auto bg-white/80 shadow-2xl">
-          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[16/9] bg-stone-900 shadow-inner">
-            <!-- Finalized Original High-Res Stage Photo from "new assets to be used" -->
-            <img
-              id="venueParallaxImg"
-              src="{% static 'new assets to be used/second section.jpg' %}"
-              alt="The Grand Murli Banquet Stage with Floral Arches, Red Velvet Sofa and Gujarati Simant Sanskar Sign"
-              class="w-full h-full object-cover animate-ken-burns will-change-transform"
-            />
-
-            <!-- Subtle Bottom Caption Bar -->
-            <div class="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-3 bg-maroon-900/85 backdrop-blur-md text-ivory-50 px-5 py-3 rounded-2xl border border-gold-400/50 z-10 shadow-lg">
-              <div class="flex items-center gap-2.5 text-xs sm:text-sm text-left">
-                <span class="w-2.5 h-2.5 rounded-full bg-gold-300 animate-pulse"></span>
-                <span class="font-bold text-gold-300 venue-name-text">The Grand Murli</span>
-                <span class="text-ivory-100/90 hidden sm:inline">&bull; Near Mahavir College, Vesu, Surat</span>
-              </div>
-              <a href="#location" class="btn-gold-metallic text-maroon-900 font-bold text-xs px-4 py-1.5 rounded-full inline-flex items-center gap-1.5">
-                <span>View Map</span>
-                <span>&rarr;</span>
-              </a>
-            </div>
           </div>
 
-          <!-- Venue Highlights Grid -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-5 pt-4 border-t border-gold-500/20 text-center">
-            <div class="p-3 rounded-2xl bg-ivory-50/80 border border-gold-500/20">
-              <span class="text-2xl block mb-1">🏛️</span>
-              <span class="text-xs font-bold text-maroon-800 block">Royal AC Banquet</span>
-              <span class="text-[11px] text-stone-500">Grand Elegance</span>
-            </div>
-            <div class="p-3 rounded-2xl bg-ivory-50/80 border border-gold-500/20">
-              <span class="text-2xl block mb-1">🌺</span>
-              <span class="text-xs font-bold text-maroon-800 block">Floral Stage</span>
-              <span class="text-[11px] text-stone-500">Shrimant Sanskar</span>
-            </div>
-            <div class="p-3 rounded-2xl bg-ivory-50/80 border border-gold-500/20">
-              <span class="text-2xl block mb-1">🍲</span>
-              <span class="text-xs font-bold text-maroon-800 block">Gujarati Feast</span>
-              <span class="text-[11px] text-stone-500">Starts 12:30 PM</span>
-            </div>
-            <div class="p-3 rounded-2xl bg-ivory-50/80 border border-gold-500/20">
-              <span class="text-2xl block mb-1">🅿️</span>
-              <span class="text-xs font-bold text-maroon-800 block">Valet Parking</span>
-              <span class="text-[11px] text-stone-500">Ample Space</span>
-            </div>
-          </div>
-        </div>
 
-      </div>
-    </section>
-
-
-    <!-- ========================================================================
-         SECTION 2.5: SHAHI MAHAPRASAD THALI (SINGLE GRAND FEAST - 12:30 PM)
-         ======================================================================== -->
-    <section id="feast" class="w-full relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-ivory-100/60 to-transparent border-b border-gold-500/25 overflow-hidden">
-      <div class="w-full max-w-5xl mx-auto text-center reveal-on-scroll">
-        
-        <!-- Cultural Badge -->
-        <div class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full bg-white/95 border border-gold-500/40 text-gold-700 text-xs sm:text-sm font-semibold tracking-wider shadow-xs backdrop-blur-xs">
-          <span>🍽️</span>
-          <span class="font-gujarati font-bold text-maroon-800">શ્રીમંત મહાપ્રસાદ / Royal Gujarati Feast</span>
-          <span>🍽️</span>
-        </div>
-
-        <!-- Heading -->
-        <h2 class="font-serifTitle font-extrabold text-3xl sm:text-5xl md:text-[3.25rem] gold-foil-text leading-tight mt-3">
-          Shahi Mahaprasad Thali
-        </h2>
-        
-        <p class="font-editorial italic font-bold text-lg sm:text-2xl text-gold-700 mt-1">
-          Authentic Traditional Gujarati Banquet
-        </p>
-
-        <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto my-3"></div>
-
-        <!-- 12:30 PM Sharp Timing Callout Banner -->
-        <div class="max-w-xl mx-auto mt-4 mb-8 bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-gold-300 p-4 sm:p-5 rounded-2xl border border-gold-400/50 shadow-lg flex items-center justify-center gap-4">
-          <div class="w-12 h-12 rounded-full bg-gold-400/20 border border-gold-400 flex items-center justify-center text-2xl flex-shrink-0 animate-pulse">
-            ⏰
-          </div>
-          <div class="text-left">
-            <div class="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold text-gold-300/90">
-              Grand Feast Timing
-            </div>
-            <div class="font-editorial font-extrabold text-xl sm:text-2xl text-white">
-              Starts Sharp at 12:30 PM Onwards
-            </div>
-            <div class="text-xs font-gujarati text-gold-300 mt-0.5">
-              જમણવાર સમય: બપોરે ૧૨:૩૦ વાગ્યાથી શરૂ — સમયસર પધારવા વિનંતી!
-            </div>
-          </div>
-        </div>
-
-        <!-- Single Common Thali Clarification & Royal Hospitality Note -->
-        <p class="text-xs sm:text-sm text-stone-600 max-w-2xl mx-auto leading-relaxed mb-8">
-          In true Gujarati tradition, we are delighted to serve one common, lavish, unlimited <strong class="text-maroon-800">Shahi Gujarati Thali</strong> prepared with pure ghee and served with affectionate family hospitality.
-        </p>
-
-        <!-- Ornate 6-Course Thali Presentation Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-left max-w-5xl mx-auto">
-          
-          <!-- Card 1: Mithai -->
-          <div class="gold-double-wire-frame rounded-2xl p-5 bg-white/95 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-3xl">🍮</span>
-              <div>
-                <h3 class="font-editorial font-bold text-lg text-maroon-800">Shahi Mithai</h3>
-                <span class="text-[11px] font-gujarati font-semibold text-gold-700">મિઠાઈ</span>
-              </div>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Pure Kesar Mohanthal, Silky Badam Shrikhand &amp; Soft Gulab Jamun served with pure desi ghee.
-            </p>
-          </div>
-
-          <!-- Card 2: Farsan -->
-          <div class="gold-double-wire-frame rounded-2xl p-5 bg-white/95 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-3xl">🥟</span>
-              <div>
-                <h3 class="font-editorial font-bold text-lg text-maroon-800">Surati Farsan</h3>
-                <span class="text-[11px] font-gujarati font-semibold text-gold-700">ગરમા-ગરમ ફરસાણ</span>
-              </div>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Freshly steamed Surati Nylon Khaman, Green Chutney &amp; Crispy Green Peas Lilva Kachori.
-            </p>
-          </div>
-
-          <!-- Card 3: Gujarati Shaak -->
-          <div class="gold-double-wire-frame rounded-2xl p-5 bg-white/95 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-3xl">🥘</span>
-              <div>
-                <h3 class="font-editorial font-bold text-lg text-maroon-800">Traditional Shaak</h3>
-                <span class="text-[11px] font-gujarati font-semibold text-gold-700">શાક ની વિવિધતા</span>
-              </div>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Authentic Surati Undhiyu with Methi Muthiya, Ringan Bataka Nu Rasawala Shaak &amp; Paneer Makhani.
-            </p>
-          </div>
-
-          <!-- Card 4: Rotli & Puri -->
-          <div class="gold-double-wire-frame rounded-2xl p-5 bg-white/95 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-3xl">🫓</span>
-              <div>
-                <h3 class="font-editorial font-bold text-lg text-maroon-800">Phulka &amp; Puri</h3>
-                <span class="text-[11px] font-gujarati font-semibold text-gold-700">રોટલી અને પૂરી</span>
-              </div>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Tavadi Phulka Rotli generously brushed with pure cow ghee &amp; golden crisp Masala Puris.
-            </p>
-          </div>
-
-          <!-- Card 5: Dal & Bhat -->
-          <div class="gold-double-wire-frame rounded-2xl p-5 bg-white/95 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-3xl">🍚</span>
-              <div>
-                <h3 class="font-editorial font-bold text-lg text-maroon-800">Khatti-Meethi Dal</h3>
-                <span class="text-[11px] font-gujarati font-semibold text-gold-700">ગુજરાતી દાળ &amp; ભાત</span>
-              </div>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Signature Gujarati sweet-tangy Dal simmered with peanuts &amp; fragrant Steamed Basmati Rice.
-            </p>
-          </div>
-
-          <!-- Card 6: Chhas & Accompaniments -->
-          <div class="gold-double-wire-frame rounded-2xl p-5 bg-white/95 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-3xl">🥛</span>
-              <div>
-                <h3 class="font-editorial font-bold text-lg text-maroon-800">Chhas &amp; Mukhwas</h3>
-                <span class="text-[11px] font-gujarati font-semibold text-gold-700">છાશ અને સંભારો</span>
-              </div>
-            </div>
-            <p class="text-xs text-stone-600 leading-relaxed">
-              Chilled Masala Buttermilk, Keri No Chhundo, Fried Green Chillies, Masala Papad &amp; Royal Mukhwas.
-            </p>
-          </div>
-
-        </div>
-
-        <!-- Bottom Reminder Tag -->
-        <div class="mt-8 inline-flex items-center gap-2 px-6 py-2 rounded-full bg-ivory-50 border border-gold-500/40 text-maroon-900 text-xs sm:text-sm font-semibold shadow-xs">
-          <span>✨</span>
-          <span>100% Pure Vegetarian &amp; Jain Friendly &bull; Unlimited Table Service Starts at 12:30 PM</span>
-          <span>✨</span>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================================
-         SECTION 3: "PAHOCHIJ JAJO TIME PAR" (SCROLL-BASED IMAGE ANIMATION)
-         ======================================================================== -->
-    <section id="family" class="w-full relative pt-0 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 border-b border-gold-500/25 overflow-hidden">
-      
-      <!-- Top Full-Width Swaying Marigold Garland Toran from Video -->
-      <div class="w-full max-w-6xl mx-auto pointer-events-none select-none mb-4 -mt-2">
-        <img src="{% static 'assets/garland_transparent.png' %}" alt="Marigold Toran Garland" class="w-full h-auto drop-shadow-sm">
-      </div>
-
-      <div class="w-full max-w-5xl mx-auto text-center" id="familySectionTrigger">
-        
-        <!-- Animated Heading: "Pahochij Jajo" is default, "Time Par" stamps in on scroll -->
-        <h2 class="font-serifTitle font-extrabold text-3xl sm:text-5xl md:text-[3.35rem] leading-tight">
-          <span class="gold-foil-text">Pahochij Jajo</span>
-          <br />
-          <span id="timeParHeadline" class="time-par-word gold-foil-text relative">
-            Time Par
-            <svg class="w-6 h-6 text-gold-400 inline-block -mt-4 ml-1 sparkle-dot" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2L14.2 9.8L22 12L14.2 14.2L12 22L9.8 14.2L2 12L9.8 9.8L12 2Z"/>
-            </svg>
-          </span>
-        </h2>
-        <p class="text-xs sm:text-sm font-semibold text-gold-700 mt-2">
-          જમવાનું શરૂ થઈ જશે, મોડા ના પડતા! (Reach on time for the auspicious Muhurat &amp; 12:30 PM Feast!)
-        </p>
-
-        <!-- Two Side-by-Side Cards (Dada & Dadi and Brother & Wife) - Scroll Animated -->
-        <div class="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-
-          <!-- Left Card: Grandparents (Dada & Dadi) -->
+          <!-- ================================================================
+               LAYER 2: SECOND SECTION STAGE PHOTO & EVENT DETAILS
+               (REVEALED WHEN VIDEO FINISHES SCROLLING)
+               ================================================================ -->
           <div
-            id="cardDadaDadi"
-            class="gold-double-wire-frame rounded-3xl p-4 sm:p-5 relative group hover:-translate-y-1 transition-all duration-300 bg-white shadow-md select-none"
+            id="secondSectionStage"
+            class="absolute inset-0 flex items-center justify-center px-3 sm:px-6 py-2 transition-all duration-300 pointer-events-none"
+            style="opacity: 0; transform: translateY(28px) scale(0.97);"
           >
-            <div class="relative rounded-2xl bg-white aspect-[4/3] overflow-hidden flex items-center justify-center p-2 border border-gold-500/20 shadow-inner">
-              <!-- Pose A: Namaste (Visible by default) -->
-              <img
-                src="{% static 'new assets to be used/dada dadi namaste.webp' %}"
-                alt="Dada & Dadi welcoming guests with Namaste"
-                class="pose-layer pose-namaste pose-visible absolute inset-0 w-full h-full object-contain p-2"
-              />
-              <!-- Pose B: Victory Peace Sign & Pointing (Automatically switches in Masti mode) -->
-              <img
-                src="{% static 'new assets to be used/dada dadi joy.webp' %}"
-                alt="Dada & Dadi cheering Time Par with victory sign and pointing"
-                class="pose-layer pose-timepar pose-hidden absolute inset-0 w-full h-full object-contain p-2"
-              />
-            </div>
-
-            <div class="mt-4 text-center">
-              <h3 class="font-editorial font-bold text-xl text-maroon-800">Dada &amp; Dadi</h3>
-              <p class="text-xs sm:text-sm text-gold-700 font-medium">"હાર્દિક સ્વાગત છે! Time par pahochij jajo!"</p>
-            </div>
-          </div>
-
-          <!-- Right Card: Brother & His Wife (Chachu & Chachi) -->
-          <div
-            id="cardChachuChachi"
-            class="gold-double-wire-frame rounded-3xl p-4 sm:p-5 relative group hover:-translate-y-1 transition-all duration-300 bg-white shadow-md select-none"
-          >
-            <div class="relative rounded-2xl bg-white aspect-[4/3] overflow-hidden flex items-center justify-center p-2 border border-gold-500/20 shadow-inner">
-              <!-- Pose A: Namaste (Visible by default) -->
-              <img
-                src="{% static 'new assets to be used/chachahi namate.webp' %}"
-                alt="Chachu & Chachi welcoming guests with Namaste"
-                class="pose-layer pose-namaste pose-visible absolute inset-0 w-full h-full object-contain p-2"
-              />
-              <!-- Pose B: Thumbs-Up & Pointing Laughing (Automatically switches in Masti mode) -->
-              <img
-                src="{% static 'new assets to be used/chacha chahi joy.webp' %}"
-                alt="Chachu & Chachi giving thumbs up and laughing for Time Par"
-                class="pose-layer pose-timepar pose-hidden absolute inset-0 w-full h-full object-contain p-2"
-              />
-            </div>
-
-            <div class="mt-4 text-center">
-              <h3 class="font-editorial font-bold text-xl text-maroon-800">Chachu &amp; Chachi</h3>
-              <p class="text-xs sm:text-sm text-gold-700 font-medium">"Full celebration &amp; feast starts sharp on time!"</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================================
-         SECTION 4: "BOY OR GIRL? SHARE YOUR GUESS!" (FINALIZED 3D WEBP POLL ASSETS)
-         ======================================================================== -->
-    <section id="predict" class="w-full relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-b border-gold-500/25 overflow-hidden">
-      
-      <!-- Left & Right Vertical Hanging Marigold Garlands from Video -->
-      <div class="pointer-events-none select-none hidden sm:block absolute top-0 bottom-0 left-3 lg:left-8 w-12 z-10 animate-side-garland">
-        <svg viewBox="0 0 60 600" class="w-full h-full" preserveAspectRatio="none">
-          <line x1="20" y1="0" x2="20" y2="560" stroke="#F97316" stroke-width="14" stroke-dasharray="12 6" stroke-linecap="round"/>
-          <line x1="20" y1="6" x2="20" y2="560" stroke="#FACC15" stroke-width="10" stroke-dasharray="12 6" stroke-linecap="round"/>
-          <circle cx="20" cy="575" r="7" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
-        </svg>
-      </div>
-
-      <div class="pointer-events-none select-none hidden sm:block absolute top-0 bottom-0 right-3 lg:right-8 w-12 z-10 animate-side-garland">
-        <svg viewBox="0 0 60 600" class="w-full h-full" preserveAspectRatio="none">
-          <line x1="40" y1="0" x2="40" y2="560" stroke="#F97316" stroke-width="14" stroke-dasharray="12 6" stroke-linecap="round"/>
-          <line x1="40" y1="6" x2="40" y2="560" stroke="#FACC15" stroke-width="10" stroke-dasharray="12 6" stroke-linecap="round"/>
-          <circle cx="40" cy="575" r="7" fill="#FFFBEB" stroke="#D97706" stroke-width="2"/>
-        </svg>
-      </div>
-
-      <div class="w-full max-w-4xl mx-auto text-center relative z-20 reveal-on-scroll">
-        
-        <!-- Heading & Flourish from Video -->
-        <h2 class="font-serifTitle font-extrabold text-3xl sm:text-5xl md:text-[3.35rem] gold-foil-text leading-tight">
-          Boy or Girl?
-        </h2>
-        <h3 class="font-editorial italic font-bold text-2xl sm:text-4xl text-gold-700 mt-1">
-          Share Your Guess!
-        </h3>
-        
-        <div class="w-32 h-[1px] bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto my-3"></div>
-        
-        <p class="text-xs sm:text-sm text-gold-700/90 max-w-md mx-auto">
-          Tap your guess below and click <span class="font-bold text-maroon-800">Submit Vote</span> to see real-time family predictions!
-        </p>
-
-        <!-- Two Large 3D-Styled Rounded Cards using 1024x1024 Finalized WebP Assets -->
-        <div class="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
-
-          <!-- BOY CARD (1024x1024 3D Bottle & Onesie with Gold Trim) -->
-          <button
-            type="button"
-            id="cardBoy"
-            onclick="selectGuess('boy')"
-            class="poll-boy-card rounded-3xl p-6 sm:p-7 text-center transition-all duration-300 cursor-pointer relative overflow-hidden group focus:outline-none"
-          >
-            <div class="flex items-center justify-center gap-2">
-              <h3 class="font-editorial font-extrabold text-2xl sm:text-3xl text-sky-800">
-                Boy
-              </h3>
-              <span id="boyCheckBadge" class="hidden w-6 h-6 rounded-full bg-sky-600 text-white text-xs items-center justify-center font-bold shadow">
-                ✓
-              </span>
-            </div>
-
-            <!-- Finalized 3D Baby Bottle and Romper WebP -->
-            <div class="my-3 sm:my-4 flex items-center justify-center rounded-2xl overflow-hidden bg-sky-50/50 p-2">
-              <img
-                src="{% static 'new assets to be used/boy vote.webp' %}"
-                alt="3D Baby Milk Bottle and Sky Blue Baby Onesie with Gold Trim"
-                class="w-full max-h-48 object-contain rounded-xl group-hover:scale-105 transition-transform duration-300 select-none"
-              />
-            </div>
-
-            <!-- Animated Percentage Bar (Video-Exact) -->
-            <div id="boyProgressWrap" class="mt-2">
-              <div class="w-full h-8 bg-white/90 rounded-full p-1 shadow-inner overflow-hidden relative flex items-center">
-                <div
-                  id="boyProgressBar"
-                  style="width: 52%"
-                  class="h-full rounded-full bg-gradient-to-r from-sky-400 to-blue-600 transition-all duration-700 ease-out flex items-center justify-end pr-3"
-                >
-                  <span id="boyPercentText" class="text-xs font-bold text-white drop-shadow">52%</span>
-                </div>
-              </div>
-            </div>
-          </button>
-
-          <!-- GIRL CARD (1024x1024 3D Rattle & Dress with Gold Trim) -->
-          <button
-            type="button"
-            id="cardGirl"
-            onclick="selectGuess('girl')"
-            class="poll-girl-card rounded-3xl p-6 sm:p-7 text-center transition-all duration-300 cursor-pointer relative overflow-hidden group focus:outline-none"
-          >
-            <div class="flex items-center justify-center gap-2">
-              <h3 class="font-editorial font-extrabold text-2xl sm:text-3xl text-pink-800">
-                Girl
-              </h3>
-              <span id="girlCheckBadge" class="hidden w-6 h-6 rounded-full bg-pink-600 text-white text-xs items-center justify-center font-bold shadow">
-                ✓
-              </span>
-            </div>
-
-            <!-- Finalized 3D Baby Rattle and Pink Dress WebP -->
-            <div class="my-3 sm:my-4 flex items-center justify-center rounded-2xl overflow-hidden bg-pink-50/50 p-2">
-              <img
-                src="{% static 'new assets to be used/girl vote.webp' %}"
-                alt="3D Baby Rattle and Pastel Pink Baby Dress with Gold Bow"
-                class="w-full max-h-48 object-contain rounded-xl group-hover:scale-105 transition-transform duration-300 select-none"
-              />
-            </div>
-
-            <!-- Animated Percentage Bar (Video-Exact) -->
-            <div id="girlProgressWrap" class="mt-2">
-              <div class="w-full h-8 bg-white/90 rounded-full p-1 shadow-inner overflow-hidden relative flex items-center">
-                <div
-                  id="girlProgressBar"
-                  style="width: 48%"
-                  class="h-full rounded-full bg-gradient-to-r from-pink-400 to-rose-600 transition-all duration-700 ease-out flex items-center justify-end pr-3"
-                >
-                  <span id="girlPercentText" class="text-xs font-bold text-white drop-shadow">48%</span>
-                </div>
-              </div>
-            </div>
-          </button>
-
-        </div>
-
-        <!-- Ornate Scalloped Cartouche "Submit Vote" Button matching video -->
-        <div class="mt-8 flex flex-col items-center">
-          <button
-            id="submitVoteBtn"
-            type="button"
-            onclick="submitPollVote()"
-            class="btn-cartouche font-editorial font-bold text-lg sm:text-xl text-maroon-900 px-12 py-3.5 cursor-pointer shadow-xl tracking-wide"
-          >
-            Submit Vote
-          </button>
-          <p id="pollFeedbackMsg" class="mt-3 text-xs sm:text-sm font-semibold text-maroon-800 min-h-[20px]"></p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ========================================================================
-         SECTION 5: VENUE MAP & LOCATION (WITH PARALLAX FLOATING 3D BANQUET)
-         ======================================================================== -->
-    <footer id="location" class="w-full relative pt-16 sm:pt-24 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div class="w-full max-w-6xl mx-auto reveal-on-scroll">
-        
-        <!-- Heading with Ornate Filigree matching video -->
-        <div class="text-center mb-10 sm:mb-14">
-          <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mb-2"></div>
-          <h2 class="font-serifTitle font-extrabold text-3xl sm:text-5xl md:text-[3.25rem] gold-foil-text leading-tight">
-            Venue Map &amp; Location Info
-          </h2>
-          <div class="w-24 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mt-2"></div>
-        </div>
-
-        <!-- 2-Column Responsive Layout matching video frame -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-
-          <!-- Left Column (7 cols): Finalized 3D Isometric Banquet Illustration with Floating Golden Pin -->
-          <div class="md:col-span-7 flex flex-col items-center">
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=The+Grand+Murli+Near+Mahavir+College+Vesu+Surat"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group relative w-full max-w-lg block cursor-pointer text-center"
-              title="Open The Grand Murli in Google Maps"
-            >
-              <div id="mapParallaxContainer" class="animate-map-float will-change-transform">
-                <img
-                  src="{% static 'new assets to be used/pin last section.webp' %}"
-                  alt="3D Isometric Palace Illustration of The Grand Murli Banquet with Golden Map Pin, Courtyard Fountain and Cars"
-                  class="w-full h-auto object-contain select-none group-hover:scale-[1.02] transition-transform duration-300"
-                />
-              </div>
-
-              <span class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-maroon-800 bg-white/95 border border-gold-500/50 px-4 py-1.5 rounded-full shadow-sm group-hover:bg-ivory-100 transition-colors">
-                <svg class="w-3.5 h-3.5 text-maroon-800" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-                </svg>
-                Tap Map to Open GPS Navigation
-              </span>
-            </a>
-          </div>
-
-          <!-- Right Column (5 cols): Scalloped Parchment "Save the Date" Card from Video -->
-          <div class="md:col-span-5">
-            <div class="parchment-notched-card p-6 sm:p-8 text-center relative">
+            <div class="gold-frame-card rounded-3xl p-3.5 sm:p-5 max-w-4xl w-full shadow-2xl relative overflow-hidden backdrop-blur-md bg-white/95 border-2 border-gold-500/50">
               
-              <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mb-3"></div>
-
-              <h3 class="font-serifTitle font-extrabold text-2xl sm:text-3xl gold-foil-text venue-name-text">
-                The Grand Murli
-              </h3>
-              <p class="font-editorial font-bold text-sm sm:text-base text-gold-700 mt-1 venue-address-text">
-                Near Mahavir College, Vesu
-              </p>
-
-              <div class="my-5 border-t border-gold-500/30"></div>
-
-              <!-- Mini Calendar Icon ("Save the Date") + Date & Time matching video -->
-              <div class="flex items-center justify-center gap-4 sm:gap-5">
-                <!-- Red Calendar Badge with Ribbon -->
-                <div class="w-20 sm:w-22 rounded-2xl overflow-hidden shadow-md border border-gold-500/60 bg-white flex-shrink-0">
-                  <div class="bg-maroon-800 text-gold-300 text-[10px] font-bold uppercase tracking-wider py-1">
-                    NOV 2026
-                  </div>
-                  <div class="py-2 px-1 text-center">
-                    <div class="font-editorial font-extrabold text-2xl text-amber-950 leading-none">19</div>
-                    <div class="text-[9px] font-bold uppercase tracking-tight text-maroon-800 mt-1">
-                      Save the Date
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-left">
-                  <p class="font-editorial font-bold text-xl sm:text-2xl text-amber-950 event-date-text">
-                    19th Nov 2026
-                  </p>
-                  <p class="font-bold text-base sm:text-lg text-maroon-800 mt-0.5 event-time-text">
-                    11 AM onwards
-                  </p>
-                  <p class="text-xs text-gold-700 mt-1">
-                    Vesu, Surat, Gujarat
-                  </p>
+              <!-- 2nd Section Photo: Grand Banquet Stage ("second section.jpg") -->
+              <div class="relative rounded-2xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] w-full bg-stone-900 shadow-inner border border-gold-500/25 max-h-[30dvh] sm:max-h-[36dvh]">
+                <img
+                  src="{% static 'new assets to be used/second section.jpg' %}"
+                  alt="The Grand Murli Banquet Stage for Rajil and Khushbu Baby Shower"
+                  class="w-full h-full object-cover animate-ken-burns will-change-transform"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-black/20 pointer-events-none"></div>
+                <div class="absolute bottom-2.5 left-3 sm:left-5 text-white drop-shadow">
+                  <span class="inline-block bg-maroon-900/90 text-gold-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-gold-400/40 mb-1">
+                    Celebration Venue
+                  </span>
+                  <h3 class="font-serifTitle font-bold text-base sm:text-xl text-ivory-50 leading-tight">
+                    The Grand Murli
+                  </h3>
                 </div>
               </div>
 
-              <!-- Action Links -->
-              <div class="mt-7 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+              <!-- Venue Details & Auspicious Subtitle -->
+              <div class="text-center mt-2.5 sm:mt-3">
+                <p class="font-gujarati font-bold text-xs sm:text-sm text-maroon-800">
+                  શ્રીમંત સંસ્કાર &bull; શુભ મુહૂર્ત અને મહાપ્રસાદ
+                </p>
+                <p class="text-xs sm:text-sm font-semibold text-gold-800">
+                  Near Mahavir College, Vesu, Surat
+                </p>
+              </div>
+
+              <!-- Auspicious Timings: 11:00 AM Ceremony & 12:30 PM Lunch -->
+              <div class="grid grid-cols-2 gap-2.5 sm:gap-4 mt-2.5 sm:mt-3">
+                
+                <!-- 11:00 AM Ceremony Card -->
+                <div class="rounded-2xl p-2.5 sm:p-3 text-center bg-gradient-to-b from-ivory-100 to-ivory-50 border border-gold-500/40 shadow-sm flex flex-col items-center justify-center">
+                  <span class="inline-flex items-center justify-center w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-maroon-800 text-gold-300 text-sm sm:text-base mb-1 shadow-sm">
+                    🌸
+                  </span>
+                  <span class="font-serifTitle font-black text-base sm:text-2xl text-maroon-900 tracking-tight leading-none">
+                    11:00 AM
+                  </span>
+                  <span class="text-[10px] sm:text-xs font-bold text-gold-800 uppercase tracking-wider mt-1">
+                    Shrimant Sanskar
+                  </span>
+                  <span class="text-[9px] sm:text-[11px] text-gold-700 font-gujarati font-medium">
+                    (શુભ મુહૂર્ત વિધિ)
+                  </span>
+                </div>
+
+                <!-- 12:30 PM Lunch Card -->
+                <div class="rounded-2xl p-2.5 sm:p-3 text-center bg-gradient-to-b from-ivory-100 to-ivory-50 border border-gold-500/40 shadow-sm flex flex-col items-center justify-center">
+                  <span class="inline-flex items-center justify-center w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-maroon-800 text-gold-300 text-sm sm:text-base mb-1 shadow-sm">
+                    🍲
+                  </span>
+                  <span class="font-serifTitle font-black text-base sm:text-2xl text-maroon-900 tracking-tight leading-none">
+                    12:30 PM
+                  </span>
+                  <span class="text-[10px] sm:text-xs font-bold text-gold-800 uppercase tracking-wider mt-1">
+                    Royal Lunch
+                  </span>
+                  <span class="text-[9px] sm:text-[11px] text-gold-700 font-gujarati font-medium">
+                    (મહાપ્રસાદ / ભોજન)
+                  </span>
+                </div>
+
+              </div>
+
+              <!-- ============================================================
+                   CREATIVE EASY-TO-FIND GOOGLE MAPS BUTTON
+                   ============================================================ -->
+              <div class="mt-3 sm:mt-4 text-center">
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=The+Grand+Murli+Near+Mahavir+College+Vesu+Surat"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="w-full sm:w-auto btn-gold-metallic text-maroon-900 font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full inline-flex items-center justify-center gap-1.5"
+                  class="creative-map-btn group relative inline-flex items-center justify-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-bold text-xs sm:text-base text-maroon-950 shadow-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] w-full sm:w-auto"
+                  title="Open GPS Navigation in Google Maps"
                 >
-                  <span>Open in Google Maps</span>
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                  </svg>
+                  <!-- Pulsing Radar Map Pin -->
+                  <span class="relative flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center flex-shrink-0">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-maroon-600 opacity-60"></span>
+                    <span class="relative inline-flex rounded-full h-5 w-5 sm:h-6 sm:w-6 bg-maroon-800 text-gold-300 items-center justify-center text-xs sm:text-sm shadow-sm">
+                      📍
+                    </span>
+                  </span>
+                  <span class="tracking-wide">Open in Google Maps &bull; Get Directions</span>
+                  <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 font-bold text-sm sm:text-base">&rarr;</span>
                 </a>
-                <button
-                  type="button"
-                  onclick="downloadCalendarEvent()"
-                  class="w-full sm:w-auto px-4 py-2.5 rounded-full border border-gold-500/60 bg-ivory-50 text-gold-700 font-semibold text-xs sm:text-sm hover:bg-ivory-100 transition-colors cursor-pointer"
-                >
-                  Add to Calendar (.ics)
-                </button>
+                <p class="text-[10px] sm:text-xs text-gold-700 font-medium mt-1.5">
+                  Tap to launch 1-click turn-by-turn navigation on Google Maps
+                </p>
               </div>
 
             </div>
@@ -823,258 +307,29 @@
 
         </div>
 
-        <!-- Full-Width Antique Gold Floral Vine Border from Video -->
-        <div class="w-full max-w-5xl mx-auto mt-14 mb-6 pointer-events-none">
-          <img src="{% static 'assets/floral_border.png' %}" alt="Decorative Floral Vine Border" class="w-full h-auto opacity-85">
-        </div>
-
-        <!-- Footer Bottom Bar (Social Icons Removed per Request) -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-gold-500/20">
-          
-          <div class="flex items-center gap-2 text-gold-700 text-xs font-semibold">
-            <span class="w-2 h-2 rounded-full bg-gold-500"></span>
-            <span>Auspicious Shrimant Sanskar &bull; The Grand Murli, Surat</span>
-          </div>
-
-          <p class="font-script text-2xl sm:text-3xl text-gold-700">
-            With love &amp; blessings — <span class="text-maroon-800 couple-names-text">Rajil &amp; Khushbu</span>
+        <!-- Subtle Footer Signature -->
+        <footer class="w-full text-center py-2 px-4 z-20 pointer-events-none select-none">
+          <p class="font-script text-lg sm:text-2xl text-gold-800 drop-shadow-sm">
+            With love &amp; blessings &mdash; <span class="text-maroon-900 font-bold">Rajil &amp; Khushbu</span>
           </p>
-
-          <!-- Video-Exact "Scroll to Top ↑" Pill Button -->
-          <button
-            type="button"
-            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-            class="btn-gold-metallic px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-maroon-900 cursor-pointer shadow-sm hover:scale-105 transition-transform"
-          >
-            Scroll to Top &uarr;
-          </button>
-        </div>
+        </footer>
 
       </div>
-    </footer>
 
-
-    <!-- ========================================================================
-         SECTION 6: GUESTBOOK & WISHES WALL
-         ======================================================================== -->
-    <section id="wishes" class="w-full relative py-14 px-4 sm:px-6 lg:px-8 bg-ivory-100/50 border-t border-gold-500/20">
-      <div class="w-full max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-          <span class="font-script text-3xl text-gold-600 block">Send Love &amp; Prayers</span>
-          <h2 class="font-serifTitle font-extrabold text-3xl sm:text-4xl gold-foil-text">
-            Wishes &amp; Blessings Board
-          </h2>
-          <p class="text-xs sm:text-sm text-gold-700 mt-1">
-            Leave your heartfelt blessings for mom-to-be and the little one!
-          </p>
-        </div>
-
-        <!-- Add Wish Form -->
-        <div class="gold-double-wire-frame p-6 max-w-xl mx-auto mb-10 bg-white/90 shadow-md">
-          <form id="wish-form" class="space-y-4">
-            <div>
-              <label for="wish-name" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
-                Your Name / Family
-              </label>
-              <input type="text" id="wish-name" required placeholder="e.g. Ramesh Patel & Family"
-                class="w-full px-4 py-2.5 rounded-xl border border-gold-500/50 bg-ivory-50/50 focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm">
-            </div>
-            <div>
-              <label for="wish-message" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1">
-                Your Blessing Message
-              </label>
-              <textarea id="wish-message" rows="3" required placeholder="Write your heartfelt blessing..."
-                class="w-full px-4 py-2.5 rounded-xl border border-gold-500/50 bg-ivory-50/50 focus:outline-none focus:ring-2 focus:ring-gold-500 text-sm resize-none"></textarea>
-            </div>
-            <button type="submit" class="w-full btn-gold-metallic py-3 text-sm uppercase tracking-wider font-bold text-maroon-900 cursor-pointer">
-              Post Blessing 🌸
-            </button>
-          </form>
-        </div>
-
-        <!-- Wishes Cards Grid -->
-        <div id="wishes-list" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
-      </div>
-    </section>
+    </div>
 
   </main>
 
 
   <!-- ========================================================================
-       NATIVE HTML5 RSVP MODAL DIALOG (Modern Web Guidance Compliant)
+       HIDDEN AUDIO ELEMENT (SHEHNAI BACKGROUND MUSIC)
        ======================================================================== -->
-  <dialog id="rsvp-dialog" closedby="any" aria-labelledby="rsvp-title" class="gold-double-wire-frame">
-    <div class="p-6 sm:p-8 bg-white rounded-2xl relative">
-      
-      <!-- Close Button -->
-      <form method="dialog" class="absolute top-4 right-4">
-        <button type="submit" aria-label="Close RSVP Dialog" 
-          class="w-8 h-8 rounded-full bg-ivory-100 hover:bg-ivory-200 text-maroon-800 flex items-center justify-center text-sm font-bold transition cursor-pointer">
-          ✕
-        </button>
-      </form>
+  <audio id="bgMusic" loop preload="none">
+    <source src="{% static 'background_music.mp3' %}" type="audio/mpeg" />
+  </audio>
 
-      <div class="text-center mb-6">
-        <span class="font-script text-2xl text-gold-600 block">Cordially Inviting You</span>
-        <h3 id="rsvp-title" class="font-serifTitle font-extrabold text-2xl sm:text-3xl text-maroon-900">
-          RSVP Celebration
-        </h3>
-        <p class="text-xs text-stone-600 mt-1">
-          Please confirm your presence so we can make wonderful arrangements for you!
-        </p>
-      </div>
-
-      <!-- RSVP Form -->
-      <form id="rsvp-form" class="space-y-4">
-        <div>
-          <label for="rsvp-name" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-            Full Name / Family Name *
-          </label>
-          <input type="text" id="rsvp-name" required placeholder="Enter your name" autofocus
-            class="w-full px-4 py-2.5 rounded-xl border border-gold-500/50 bg-ivory-50/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500">
-        </div>
-
-        <div class="grid grid-cols-2 gap-3">
-          <div>
-            <label for="rsvp-guests" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-              Number of Guests
-            </label>
-            <select id="rsvp-guests" class="w-full px-3 py-2.5 rounded-xl border border-gold-500/50 bg-ivory-50/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500">
-              <option value="1">1 Person</option>
-              <option value="2" selected>2 Persons</option>
-              <option value="3">3 Persons</option>
-              <option value="4">4 Persons</option>
-              <option value="5+">5+ Family</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="rsvp-status" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-              Attending?
-            </label>
-            <select id="rsvp-status" class="w-full px-3 py-2.5 rounded-xl border border-gold-500/50 bg-ivory-50/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500">
-              <option value="yes">Joyfully Attending! 🎉</option>
-              <option value="no">Sending Love &amp; Blessings ❤️</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label for="rsvp-diet" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-            Food / Prasad Preference
-          </label>
-          <select id="rsvp-diet" class="w-full px-3 py-2.5 rounded-xl border border-gold-500/50 bg-ivory-50/50 text-sm focus:outline-none focus:ring-2 focus:ring-gold-500">
-            <option value="regular">Pure Vegetarian Gujarati Thali</option>
-            <option value="jain">Jain Vegetarian (No Onion/Garlic/Root)</option>
-            <option value="swaminarayan">Swaminarayan Meal</option>
-          </select>
-        </div>
-
-        <button type="submit" class="w-full btn-gold-metallic py-3 text-sm uppercase tracking-wider font-bold text-maroon-900 cursor-pointer">
-          Confirm RSVP Attendance
-        </button>
-      </form>
-
-      <!-- Confirmation Message -->
-      <div id="rsvp-success-msg" class="hidden text-center py-8 space-y-3">
-        <span class="text-5xl block animate-bounce">🎉</span>
-        <h4 class="font-serifTitle font-bold text-xl text-maroon-900">Thank You So Much!</h4>
-        <p class="text-sm text-stone-700">
-          Your RSVP has been saved. We eagerly look forward to seeing you at the celebration!
-        </p>
-      </div>
-
-    </div>
-  </dialog>
-
-
-  <!-- ========================================================================
-       LIVE CUSTOMIZER DRAWER (Allows instant editing for your own Baby Shower)
-       ======================================================================== -->
-  <aside id="customizer-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-50 p-6 overflow-y-auto closed border-l-2 border-gold-400">
-    <div class="flex items-center justify-between pb-4 border-b border-gold-500/30">
-      <div>
-        <h3 class="font-serifTitle font-bold text-xl text-maroon-900">Customize Invitation</h3>
-        <span class="text-xs text-stone-500">Instant Live Preview for Your Baby Shower</span>
-      </div>
-      <button id="close-customizer-btn" type="button" aria-label="Close Customizer" 
-        class="w-8 h-8 rounded-full bg-ivory-100 hover:bg-ivory-200 text-maroon-900 flex items-center justify-center font-bold">
-        ✕
-      </button>
-    </div>
-
-    <form id="customizer-form" class="mt-6 space-y-4">
-      <div>
-        <label for="input-couple-names" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-          Couple / Parents Names
-        </label>
-        <input type="text" id="input-couple-names" value="Rajil & Khushbu" required
-          class="w-full px-3.5 py-2 rounded-xl border border-gold-500/50 text-sm focus:ring-2 focus:ring-gold-500">
-      </div>
-
-      <div>
-        <label for="input-cultural-title" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-          Ceremony Title
-        </label>
-        <input type="text" id="input-cultural-title" value="શ્રીમંત સંસ્કાર / Shrimant Sanskar" required
-          class="w-full px-3.5 py-2 rounded-xl border border-gold-500/50 text-sm focus:ring-2 focus:ring-gold-500">
-      </div>
-
-      <div class="grid grid-cols-2 gap-3">
-        <div>
-          <label for="input-event-date" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-            Display Date
-          </label>
-          <input type="text" id="input-event-date" value="19th Nov 2026" required
-            class="w-full px-3.5 py-2 rounded-xl border border-gold-500/50 text-sm focus:ring-2 focus:ring-gold-500">
-        </div>
-        <div>
-          <label for="input-event-time" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-            Display Time
-          </label>
-          <input type="text" id="input-event-time" value="11 AM onwards" required
-            class="w-full px-3.5 py-2 rounded-xl border border-gold-500/50 text-sm focus:ring-2 focus:ring-gold-500">
-        </div>
-      </div>
-
-      <div>
-        <label for="input-venue-name" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-          Venue Name
-        </label>
-        <input type="text" id="input-venue-name" value="The Grand Murli" required
-          class="w-full px-3.5 py-2 rounded-xl border border-gold-500/50 text-sm focus:ring-2 focus:ring-gold-500">
-      </div>
-
-      <div>
-        <label for="input-venue-address" class="block text-xs font-bold uppercase text-stone-700 mb-1">
-          Venue Address / Area
-        </label>
-        <input type="text" id="input-venue-address" value="Near Mahavir College, Vesu, Surat" required
-          class="w-full px-3.5 py-2 rounded-xl border border-gold-500/50 text-sm focus:ring-2 focus:ring-gold-500">
-      </div>
-
-      <div class="pt-3 space-y-2">
-        <button type="submit" class="w-full btn-gold-metallic py-3 text-sm uppercase tracking-wider font-bold text-maroon-900 cursor-pointer">
-          Save &amp; Apply Changes 💾
-        </button>
-        <button type="button" onclick="copyShareLink()" class="w-full py-2.5 rounded-xl border-2 border-emerald-600 text-emerald-800 hover:bg-emerald-50 text-xs font-bold uppercase transition flex items-center justify-center gap-2 cursor-pointer">
-          <span>📲</span>
-          <span>Copy Shareable WhatsApp Link</span>
-        </button>
-      </div>
-    </form>
-  </aside>
-
-  <!-- Non-Blocking Toast Banner -->
-  <div
-    id="toastBanner"
-    class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-4 transition-all duration-300 bg-maroon-900 text-ivory-50 border border-gold-400 px-5 py-3 rounded-full shadow-2xl text-xs sm:text-sm font-medium flex items-center gap-2"
-  >
-    <span class="w-2 h-2 rounded-full bg-gold-300"></span>
-    <span id="toastMessage">Saved to calendar!</span>
-  </div>
-
-  <!-- Interactive Script -->
+  <!-- External JavaScript -->
   <script src="{% static 'script.js' %}"></script>
+
 </body>
 </html>
