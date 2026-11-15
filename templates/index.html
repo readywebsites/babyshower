@@ -1,335 +1,750 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baby Shower Celebration | Rajil &amp; Khushbu</title>
-  <meta name="description" content="You are cordially invited to celebrate the auspicious Baby Shower (Shrimant Sanskar) celebration of Rajil &amp; Khushbu! 19th Nov 2026 at The Grand Murli, Surat." />
+  <meta name="description" content="You are cordially invited to celebrate the auspicious Baby Shower (Shrimant Sanskar) celebration of Rajil &amp; Khushbu! Thursday, 19 November 2026 at The Grand Murli, Surat." />
 
-  <!-- Favicon from assets folder -->
+  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="{% static 'assets/favicon.jpg' %}" />
   <link rel="apple-touch-icon" href="{% static 'assets/favicon.jpg' %}" />
 
   <!-- OpenGraph Meta Tags for Link Sharing (WhatsApp, Facebook, iMessage, Instagram) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Baby Shower Celebration | Rajil &amp; Khushbu" />
-  <meta property="og:description" content="Auspicious Shrimant Sanskar of Rajil &amp; Khushbu! 19th Nov 2026 at The Grand Murli, Surat. Ceremony 11:00 AM &bull; Lunch 12:30 PM." />
-  <meta property="og:image" content="{% static 'assets/og image.jpg' %}" />
-  <meta property="og:image:secure_url" content="{% static 'assets/og image.jpg' %}" />
+  <meta property="og:description" content="Auspicious Shrimant Sanskar of Rajil &amp; Khushbu! Thursday, 19 November 2026 at The Grand Murli, Surat." />
+  <meta property="og:image" content="https://invitation.biz499.com{% static 'assets/og image.jpg' %}" />
+  <meta property="og:image:secure_url" content="https://invitation.biz499.com{% static 'assets/og image.jpg' %}" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:alt" content="Rajil &amp; Khushbu Baby Shower Celebration Invitation" />
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Baby Shower Celebration | Rajil &amp; Khushbu" />
-  <meta name="twitter:description" content="Auspicious Shrimant Sanskar of Rajil &amp; Khushbu! 19th Nov 2026 at The Grand Murli, Surat. Ceremony 11:00 AM &bull; Lunch 12:30 PM." />
-  <meta name="twitter:image" content="{% static 'assets/og image.jpg' %}" />
+  <meta name="twitter:description" content="Auspicious Shrimant Sanskar of Rajil &amp; Khushbu! Thursday, 19 November 2026 at The Grand Murli, Surat." />
+  <meta name="twitter:image" content="https://invitation.biz499.com{% static 'assets/og image.jpg' %}" />
 
-  <!-- High-Priority Preload for Hero Poster WebP (Instant Display, Zero Wait) -->
-  <link rel="preload" as="image" href="{% static 'assets/hero_poster_desktop.webp' %}" media="(min-width: 768px)" type="image/webp" />
-  <link rel="preload" as="image" href="{% static 'assets/hero_poster_mobile.webp' %}" media="(max-width: 767px)" type="image/webp" />
+  <style>
 
-  <!-- Google Fonts: Cinzel Decorative, Playfair Display, Great Vibes, Plus Jakarta Sans & Noto Serif Gujarati -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Great+Vibes&family=Noto+Serif+Gujarati:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  /* =================================
+     GENERAL
+  ================================= */
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-  <!-- Canvas Confetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  html {
+    scroll-behavior: smooth;
+  }
 
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="{% static 'style.css' %}" />
+  body {
+    font-family: Georgia, serif;
+    background: #fff9f5;
+    color: #704d50;
+    overflow-x: hidden;
+  }
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ivory: {
-              50: '#FDF8F0',
-              100: '#F9F1E2',
-              200: '#F2E3C9',
-              300: '#E5CFA8',
-            },
-            gold: {
-              300: '#F3D899',
-              400: '#D4AF37',
-              500: '#A67C52',
-              600: '#8C6239',
-              700: '#6E4B28',
-              800: '#53361A',
-            },
-            maroon: {
-              700: '#8E223D',
-              800: '#7A1C33',
-              900: '#4E0E1E',
-              950: '#340813',
-            },
-          },
-          fontFamily: {
-            serifTitle: ['"Cinzel Decorative"', '"Playfair Display"', 'Georgia', 'serif'],
-            editorial: ['"Playfair Display"', 'Georgia', 'serif'],
-            script: ['"Great Vibes"', 'cursive'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            gujarati: ['"Noto Serif Gujarati"', 'serif'],
-          }
-        }
-      }
-    };
-  </script>
+  /* =================================
+     SECTION 1 - HERO VIDEO
+  ================================= */
+
+  .hero {
+    height: 180vh;
+    position: relative;
+  }
+
+  .hero-video {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #49383b;
+  }
+
+  .hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Desktop video */
+
+  .desktop-video {
+    display: block;
+  }
+
+  /* Mobile video */
+
+  .mobile-video {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+
+    .desktop-video {
+      display: none;
+    }
+
+    .mobile-video {
+      display: block;
+    }
+
+  }
+
+  /* =================================
+     EVENT CARD - COMMON
+  ================================= */
+
+  .hero-content {
+    position: absolute;
+    top: 15vh;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 2;
+    text-align: center;
+    color: white;
+  }
+
+  .event-details {
+    display: inline-block;
+    width: min(100%, 390px);
+    padding: 14px 13px;
+    border-radius: 15px;
+
+    background: rgba(35, 25, 27, 0.64);
+
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+
+    border: 1px solid rgba(255,255,255,.30);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.22);
+  }
+
+  /* TITLE */
+
+  .event-title {
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 4px;
+    color: #fff;
+  }
+
+  /* DATE */
+
+  .event-date {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  /* =================================
+     EVENT TIMINGS
+  ================================= */
+
+  .event-times {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid rgba(255,255,255,.3);
+    border-bottom: 1px solid rgba(255,255,255,.3);
+
+    margin-bottom: 9px;
+  }
+
+  .event-time {
+    padding: 9px 3px;
+  }
+
+  .event-time + .event-time {
+    border-left: 1px solid rgba(255,255,255,.3);
+  }
+
+  .event-time div {
+    font-family: Arial, sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .event-time span {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    margin-top: 5px;
+    letter-spacing: .7px;
+    color: #fff;
+  }
+
+  /* =================================
+     COUNTDOWN
+  ================================= */
+
+  .countdown-title {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    margin: 9px 0;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  #countdown {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  #countdown div {
+    flex: 1;
+    background: rgba(255,255,255,.17);
+    border-radius: 8px;
+    padding: 8px 2px;
+  }
+
+  #countdown strong {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    color: #fff;
+  }
+
+  #countdown small {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    margin-top: 3px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  /* =================================
+     SECTION 2 - PHOTO
+  ================================= */
+
+  .photo-section {
+    min-height: 100vh;
+    padding: 55px 20px 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8e9e5;
+  }
+
+  .photo-card {
+    width: 100%;
+    max-width: 850px;
+    text-align: center;
+  }
+
+  .photo-card img {
+    width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow: 0 15px 40px rgba(90,50,50,.15);
+  }
+
+  .photo-caption {
+    padding: 25px 15px;
+  }
+
+  .photo-caption h2 {
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 12px;
+  }
+
+  .photo-caption p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* =================================
+     FIXED MAP BUTTON
+  ================================= */
+
+  .map-button {
+    position: fixed;
+    z-index: 9999;
+
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #855c61;
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px 30px;
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+
+    transition: background .3s ease;
+  }
+
+  .map-button:hover {
+    background: #674247;
+  }
+
+  /* =================================
+     MOBILE DESIGN
+     Original compact layout preserved
+  ================================= */
+
+  @media (max-width: 700px) {
+
+    .hero-content {
+      top: 15vh;
+      padding: 10px;
+    }
+
+    .event-details {
+      width: 100%;
+      max-width: 390px;
+      padding: 14px 13px;
+    }
+
+    .event-title {
+      font-size: 27px;
+    }
+
+    .event-date {
+      font-size: 12px;
+    }
+
+    .event-time {
+      padding: 9px 3px;
+    }
+
+    .event-time div {
+      font-size: 21px;
+    }
+
+    .event-time span {
+      font-size: 9px;
+    }
+
+    .countdown-title {
+      font-size: 10px;
+    }
+
+    #countdown {
+      gap: 5px;
+    }
+
+    #countdown strong {
+      font-size: 19px;
+    }
+
+    #countdown small {
+      font-size: 8px;
+    }
+
+    .photo-caption h2 {
+      font-size: 26px;
+    }
+
+    .map-button {
+      bottom: 15px;
+      padding: 13px 27px;
+      font-size: 13px;
+    }
+
+  }
+
+  /* EXTRA SMALL PHONES */
+
+  @media (max-width: 360px) {
+
+    .hero-content {
+      top: 14vh;
+      padding: 8px;
+    }
+
+    .event-details {
+      padding: 12px 9px;
+    }
+
+    .event-title {
+      font-size: 24px;
+    }
+
+    .event-time div {
+      font-size: 19px;
+    }
+
+    #countdown strong {
+      font-size: 17px;
+    }
+
+  }
+
+  /* =================================
+     DESKTOP ONLY
+     WIDE + SLIM HORIZONTAL CARD
+  ================================= */
+
+  @media (min-width: 701px) {
+
+    .hero-content {
+      top: 86vh;
+      padding: 10px 20px;
+      left: 25%;
+    }
+
+    .event-details {
+      width: min(92vw, 720px);
+
+      padding: 13px 22px;
+
+      display: grid;
+
+      grid-template-columns: 0.9fr 1.5fr;
+
+      grid-template-areas:
+        "title times"
+        "date countdown-title"
+        ". countdown";
+
+      column-gap: 20px;
+      row-gap: 3px;
+
+      align-items: center;
+      text-align: center;
+    }
+
+    .event-title {
+      grid-area: title;
+      font-size: 29px;
+      margin: 0;
+    }
+
+    .event-date {
+      grid-area: date;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .event-times {
+      grid-area: times;
+      margin: 0;
+
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .event-time {
+      padding: 8px 5px;
+    }
+
+    .event-time div {
+      font-size: 22px;
+    }
+
+    .event-time span {
+      font-size: 9px;
+    }
+
+    .countdown-title {
+      grid-area: countdown-title;
+      margin: 5px 0;
+      font-size: 10px;
+    }
+
+    #countdown {
+      grid-area: countdown;
+      gap: 6px;
+    }
+
+    #countdown div {
+      padding: 5px;
+    }
+
+    #countdown strong {
+      font-size: 17px;
+    }
+
+    #countdown small {
+      font-size: 8px;
+    }
+
+  }
+
+  </style>
 </head>
 
-<body class="bg-[#FDF8F0] text-[#4A3723] antialiased selection:bg-gold-400 selection:text-maroon-950 min-h-screen">
+<body>
 
-  <!-- ========================================================================
-       TOP BLUR NAVIGATION BAR (STREAMLINED & ROYAL)
-       ======================================================================== -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-[#FDF8F0]/90 backdrop-blur-md border-b border-gold-500/20 transition-all duration-300">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-      
-      <!-- Logo: Clean "Baby Shower" with couple subtitle -->
-      <a href="#experience" class="flex items-center gap-2 group">
-        <span class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-tr from-maroon-900 to-gold-500 flex items-center justify-center text-ivory-50 text-xs sm:text-sm font-bold shadow-sm">
-          🕉️
-        </span>
-        <div class="text-left">
-          <span class="font-serifTitle font-bold text-base sm:text-lg tracking-wide gold-foil-text block leading-tight">
-            Baby Shower
-          </span>
-          <span class="text-[10px] sm:text-xs font-semibold text-gold-700 block -mt-0.5">
-            Rajil &amp; Khushbu &bull; 19 Nov 2026
-          </span>
-        </div>
-      </a>
+  <!-- =================================
+       SECTION 1 - HERO VIDEO
+  ================================= -->
 
-      <!-- Right Controls: Shehnai Audio & Quick Map Button -->
-      <div class="flex items-center gap-2.5 sm:gap-3">
-        <!-- Shehnai Ambient Music Button -->
-        <button
-          id="musicToggleBtn"
-          class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold-500/40 bg-white/80 hover:bg-ivory-100 text-maroon-900 text-xs font-semibold shadow-sm transition-all active:scale-95"
-          title="Toggle Ambient Shehnai Music"
-          aria-label="Toggle Shehnai Music"
-        >
-          <span id="musicIconWave" class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-maroon-800"></span>
-          </span>
-          <span id="musicLabel" class="hidden sm:inline">Shehnai</span>
-        </button>
+  <section class="hero">
 
-        <!-- Quick Maps Navigation Button in Header -->
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=The+Grand+Murli+Near+Mahavir+College+Vesu+Surat"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-gold-metallic text-maroon-950 font-bold text-xs px-3.5 sm:px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 shadow-sm hover:scale-105 active:scale-95 transition-transform"
-          title="Open Location in Google Maps"
-        >
-          <span class="text-sm">📍</span>
-          <span>Maps</span>
-        </a>
-      </div>
+    <div class="hero-video">
+
+      <!-- DESKTOP LANDSCAPE VIDEO -->
+
+      <video
+        class="desktop-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="{% static 'assets/hero_poster_desktop.webp' %}">
+
+        <source
+          src="{% static 'assets/animate hero.mp4' %}"
+          type="video/mp4">
+
+        <source
+          src="https://invitation.biz499.com/static/assets/animate%20hero.mp4"
+          type="video/mp4">
+
+      </video>
+
+
+      <!-- MOBILE VERTICAL VIDEO -->
+
+      <video
+        class="mobile-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="{% static 'assets/hero_poster_mobile.webp' %}">
+
+        <source
+          src="{% static 'assets/animate hero vertical.mp4' %}"
+          type="video/mp4">
+
+        <source
+          src="https://invitation.biz499.com/static/assets/animate%20hero%20vertical.mp4"
+          type="video/mp4">
+
+      </video>
 
     </div>
-  </header>
 
 
-  <!-- ========================================================================
-       MAIN SCROLL RUNWAY & FIXED CONTAINER STAGE
-       ======================================================================== -->
-  <main id="experience" class="relative w-full">
-    
-    <!-- Scroll Runway Track (Gives scroll length for video scrub & transition) -->
-    <div id="scrollRunway" class="relative w-full" style="height: 235vh;">
+    <!-- EVENT DETAILS -->
 
-      <!-- Sticky Full-Screen Stage (Stays locked on screen as visitor scrolls) -->
-      <div id="stickyStage" class="sticky top-0 w-full h-[100dvh] overflow-hidden flex flex-col justify-between select-none pt-14 sm:pt-16">
-        
-        <!-- Top Full-Width Swaying Marigold Garland Toran -->
-        <div class="w-full max-w-5xl mx-auto pointer-events-none select-none px-4 -mt-1 sm:-mt-2 z-20">
-          <img src="{% static 'assets/garland_transparent.png' %}" alt="Marigold Toran Garland" class="w-full h-auto drop-shadow-sm max-h-12 sm:max-h-16 object-contain mx-auto animate-garland">
+    <div class="hero-content">
+
+      <div class="event-details">
+
+        <div class="event-title">
+          Shrimant Sanskar
         </div>
 
-        <!-- Central Stage Canvas Container -->
-        <div class="flex-1 w-full max-w-5xl mx-auto px-3 sm:px-6 py-2 flex items-center justify-center relative">
+        <div class="event-date">
+          Thursday, 19 November 2026
+        </div>
 
-          <!-- ================================================================
-               LAYER 1: HERO VIDEO (SCRUBS FORWARD/BACKWARD ON SCROLL)
-               ================================================================ -->
-          <div id="videoStage" class="w-full relative rounded-3xl overflow-hidden shadow-2xl border-2 border-gold-500/35 bg-stone-900 transition-all duration-300">
-            
-            <!-- Desktop Video (1280x720 Landscape: animate hero.mp4) -->
-            <video
-              id="heroVideoDesktop"
-              class="hidden md:block w-full h-auto object-cover select-none pointer-events-none"
-              src="{% static 'assets/animate hero.mp4' %}"
-              poster="{% static 'assets/hero_poster_desktop.webp' %}"
-              playsinline
-              muted
-              preload="none"
-              webkit-playsinline
-            ></video>
 
-            <!-- Mobile Video (720x1280 Vertical: animate hero vertical.mp4) -->
-            <video
-              id="heroVideoMobile"
-              class="block md:hidden w-full h-auto object-cover select-none pointer-events-none max-h-[72dvh]"
-              src="{% static 'assets/animate hero vertical.mp4' %}"
-              poster="{% static 'assets/hero_poster_mobile.webp' %}"
-              playsinline
-              muted
-              preload="none"
-              webkit-playsinline
-            ></video>
+        <!-- CEREMONY AND LUNCH -->
 
-            <!-- Bottom Gradient Shade for Smoothness -->
-            <div class="absolute bottom-0 inset-x-0 h-16 sm:h-24 bg-gradient-to-t from-stone-900/60 to-transparent pointer-events-none"></div>
+        <div class="event-times">
 
-            <!-- Scroll Prompt Hint (fades out as soon as user starts scrolling) -->
-            <div id="scrollHintPrompt" class="absolute bottom-4 inset-x-0 flex flex-col items-center justify-center pointer-events-none text-white drop-shadow-md transition-opacity duration-300">
-              <span class="text-xs sm:text-sm font-semibold tracking-wider uppercase text-gold-300 bg-stone-950/70 px-4 py-1.5 rounded-full border border-gold-400/40 backdrop-blur-sm animate-pulse">
-                Scroll to explore invitation ↓
-              </span>
-            </div>
+          <div class="event-time">
+
+            <div>10:30 AM</div>
+
+            <span>CEREMONY BEGINS</span>
 
           </div>
 
 
-          <!-- ================================================================
-               LAYER 2: SECOND SECTION STAGE PHOTO & EVENT DETAILS
-               (REVEALED WHEN VIDEO FINISHES SCROLLING)
-               ================================================================ -->
-          <div
-            id="secondSectionStage"
-            class="absolute inset-0 flex items-center justify-center px-3 sm:px-6 py-2 transition-all duration-300 pointer-events-none"
-            style="opacity: 0; transform: translateY(28px) scale(0.97);"
-          >
-            <div class="gold-frame-card rounded-3xl p-3.5 sm:p-5 max-w-4xl w-full shadow-2xl relative overflow-hidden backdrop-blur-md bg-white/95 border-2 border-gold-500/50">
-              
-              <!-- 2nd Section Photo: Grand Banquet Stage ("second section.jpg") -->
-              <div class="relative rounded-2xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] w-full bg-stone-900 shadow-inner border border-gold-500/25 max-h-[30dvh] sm:max-h-[36dvh]">
-                <img
-                  src="{% static 'new assets to be used/second section.jpg' %}"
-                  alt="The Grand Murli Banquet Stage for Rajil and Khushbu Baby Shower"
-                  class="w-full h-full object-cover animate-ken-burns will-change-transform"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-black/20 pointer-events-none"></div>
-                <div class="absolute bottom-2.5 left-3 sm:left-5 text-white drop-shadow">
-                  <span class="inline-block bg-maroon-900/90 text-gold-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-gold-400/40 mb-1">
-                    Celebration Venue
-                  </span>
-                  <h3 class="font-serifTitle font-bold text-base sm:text-xl text-ivory-50 leading-tight">
-                    The Grand Murli
-                  </h3>
-                </div>
-              </div>
+          <div class="event-time">
 
-              <!-- Venue Details & Auspicious Subtitle -->
-              <div class="text-center mt-2.5 sm:mt-3">
-                <p class="font-gujarati font-bold text-xs sm:text-sm text-maroon-800">
-                  શ્રીમંત સંસ્કાર &bull; શુભ મુહૂર્ત અને મહાપ્રસાદ
-                </p>
-                <p class="text-xs sm:text-sm font-semibold text-gold-800">
-                  Near Mahavir College, Vesu, Surat
-                </p>
-              </div>
+            <div>12:00 PM</div>
 
-              <!-- Auspicious Timings: 11:00 AM Ceremony & 12:30 PM Lunch -->
-              <div class="grid grid-cols-2 gap-2.5 sm:gap-4 mt-2.5 sm:mt-3">
-                
-                <!-- 11:00 AM Ceremony Card -->
-                <div class="rounded-2xl p-2.5 sm:p-3 text-center bg-gradient-to-b from-ivory-100 to-ivory-50 border border-gold-500/40 shadow-sm flex flex-col items-center justify-center">
-                  <span class="inline-flex items-center justify-center w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-maroon-800 text-gold-300 text-sm sm:text-base mb-1 shadow-sm">
-                    🌸
-                  </span>
-                  <span class="font-serifTitle font-black text-base sm:text-2xl text-maroon-900 tracking-tight leading-none">
-                    11:00 AM
-                  </span>
-                  <span class="text-[10px] sm:text-xs font-bold text-gold-800 uppercase tracking-wider mt-1">
-                    Shrimant Sanskar
-                  </span>
-                  <span class="text-[9px] sm:text-[11px] text-gold-700 font-gujarati font-medium">
-                    (શુભ મુહૂર્ત વિધિ)
-                  </span>
-                </div>
+            <span>LUNCH</span>
 
-                <!-- 12:30 PM Lunch Card -->
-                <div class="rounded-2xl p-2.5 sm:p-3 text-center bg-gradient-to-b from-ivory-100 to-ivory-50 border border-gold-500/40 shadow-sm flex flex-col items-center justify-center">
-                  <span class="inline-flex items-center justify-center w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-maroon-800 text-gold-300 text-sm sm:text-base mb-1 shadow-sm">
-                    🍲
-                  </span>
-                  <span class="font-serifTitle font-black text-base sm:text-2xl text-maroon-900 tracking-tight leading-none">
-                    12:30 PM
-                  </span>
-                  <span class="text-[10px] sm:text-xs font-bold text-gold-800 uppercase tracking-wider mt-1">
-                    Royal Lunch
-                  </span>
-                  <span class="text-[9px] sm:text-[11px] text-gold-700 font-gujarati font-medium">
-                    (મહાપ્રસાદ / ભોજન)
-                  </span>
-                </div>
-
-              </div>
-
-              <!-- ============================================================
-                   CREATIVE EASY-TO-FIND GOOGLE MAPS BUTTON
-                   ============================================================ -->
-              <div class="mt-3 sm:mt-4 text-center">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=The+Grand+Murli+Near+Mahavir+College+Vesu+Surat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="creative-map-btn group relative inline-flex items-center justify-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full font-bold text-xs sm:text-base text-maroon-950 shadow-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] w-full sm:w-auto"
-                  title="Open GPS Navigation in Google Maps"
-                >
-                  <!-- Pulsing Radar Map Pin -->
-                  <span class="relative flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center flex-shrink-0">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-maroon-600 opacity-60"></span>
-                    <span class="relative inline-flex rounded-full h-5 w-5 sm:h-6 sm:w-6 bg-maroon-800 text-gold-300 items-center justify-center text-xs sm:text-sm shadow-sm">
-                      📍
-                    </span>
-                  </span>
-                  <span class="tracking-wide">Open in Google Maps &bull; Get Directions</span>
-                  <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 font-bold text-sm sm:text-base">&rarr;</span>
-                </a>
-                <p class="text-[10px] sm:text-xs text-gold-700 font-medium mt-1.5">
-                  Tap to launch 1-click turn-by-turn navigation on Google Maps
-                </p>
-              </div>
-
-            </div>
           </div>
 
         </div>
 
-        <!-- Subtle Footer Signature -->
-        <footer class="w-full text-center py-2 px-4 z-20 pointer-events-none select-none">
-          <p class="font-script text-lg sm:text-2xl text-gold-800 drop-shadow-sm">
-            With love &amp; blessings &mdash; <span class="text-maroon-900 font-bold">Rajil &amp; Khushbu</span>
-          </p>
-        </footer>
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown-title">
+          Celebration Begins In
+        </div>
+
+        <div id="countdown">
+
+          <div>
+            <strong id="days">00</strong>
+            <small>Days</small>
+          </div>
+
+          <div>
+            <strong id="hours">00</strong>
+            <small>Hours</small>
+          </div>
+
+          <div>
+            <strong id="minutes">00</strong>
+            <small>Minutes</small>
+          </div>
+
+          <div>
+            <strong id="seconds">00</strong>
+            <small>Seconds</small>
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
-  </main>
+  </section>
 
 
-  <!-- ========================================================================
-       HIDDEN AUDIO ELEMENT (SHEHNAI BACKGROUND MUSIC)
-       ======================================================================== -->
-  <audio id="bgMusic" loop preload="none">
-    <source src="{% static 'background_music.mp3' %}" type="audio/mpeg" />
-  </audio>
+  <!-- =================================
+       SECTION 2 - ORIGINAL PHOTO
+  ================================= -->
 
-  <!-- External JavaScript -->
-  <script src="{% static 'script.js' %}"></script>
+  <section class="photo-section">
+
+    <div class="photo-card">
+
+      <img
+        src="{% static 'new assets to be used/second section.jpg' %}"
+        alt="Shrimant Sanskar Celebration">
+
+      <div class="photo-caption">
+
+        <h2>We Can't Wait to Celebrate With You</h2>
+
+        <p>
+          Your presence and blessings will make
+          our special day even more memorable.
+        </p>
+
+        <p style="margin-top:15px">
+          The Grand Murli<br>
+          Near Mahavir College, Vesu, Surat
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       ALWAYS VISIBLE MAP BUTTON
+  ================================= -->
+
+  <a
+    class="map-button"
+    href="https://www.google.com/maps/search/?api=1&query=The+Grand+Murli+Near+Mahavir+College+Vesu+Surat"
+    target="_blank"
+    rel="noopener">
+
+    📍 VIEW ON MAP
+
+  </a>
+
+
+  <!-- =================================
+       COUNTDOWN - INDIA STANDARD TIME
+  ================================= -->
+
+  <script>
+
+  function updateCountdown() {
+
+    // 19 November 2026
+    // 10:30 AM IST = 05:00 UTC
+
+    const eventTime = Date.UTC(
+      2026,
+      10,
+      19,
+      5,
+      0,
+      0
+    );
+
+    const now = Date.now();
+
+    const difference = eventTime - now;
+
+
+    if (difference <= 0) {
+
+      document.getElementById("countdown").innerHTML =
+        "<strong>Celebration Time!</strong>";
+
+      return;
+
+    }
+
+
+    const days = Math.floor(
+      difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+      (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+      (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+      (difference / 1000) % 60
+    );
+
+
+    document.getElementById("days").textContent =
+      String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+      String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+      String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+      String(seconds).padStart(2, "0");
+
+  }
+
+  updateCountdown();
+
+  setInterval(updateCountdown, 1000);
+
+  </script>
 
 </body>
 </html>
