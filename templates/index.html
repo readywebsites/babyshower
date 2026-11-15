@@ -29,7 +29,7 @@
   <style>
 
   /* =================================
-     GENERAL
+     GENERAL - NO SCROLL
   ================================= */
 
   * {
@@ -38,15 +38,13 @@
     box-sizing: border-box;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     font-family: Georgia, serif;
     background: #fff9f5;
     color: #704d50;
-    overflow-x: hidden;
   }
 
   /* =================================
@@ -54,15 +52,18 @@
   ================================= */
 
   .hero {
-    height: 180vh;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
     position: relative;
+    overflow: hidden;
   }
 
   .hero-video {
-    position: sticky;
-    top: 0;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     background: #49383b;
   }
@@ -98,56 +99,58 @@
   }
 
   /* =================================
-     EVENT CARD - COMMON
+     EVENT CARD - PERFECTLY CENTERED
   ================================= */
 
   .hero-content {
     position: absolute;
-    top: 15vh;
-    left: 0;
-    right: 0;
+    inset: 0;
     width: 100%;
-    padding: 10px;
-    z-index: 2;
+    height: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
+    padding: 15px;
+    z-index: 2;
     text-align: center;
     color: white;
   }
 
   .event-details {
     margin: 0 auto;
-    display: inline-block;
-    width: min(100%, 390px);
-    padding: 14px 13px;
-    border-radius: 15px;
+    width: min(100%, 420px);
+    padding: 20px 18px;
+    border-radius: 18px;
 
-    background: rgba(35, 25, 27, 0.64);
+    background: rgba(35, 25, 27, 0.68);
 
-    backdrop-filter: blur(9px);
-    -webkit-backdrop-filter: blur(9px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-    border: 1px solid rgba(255,255,255,.30);
+    border: 1px solid rgba(255, 255, 255, 0.32);
 
-    box-shadow: 0 8px 30px rgba(0,0,0,.22);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.28);
   }
 
   /* TITLE */
 
   .event-title {
-    font-size: 27px;
+    font-size: 28px;
     font-weight: normal;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     color: #fff;
+    letter-spacing: 0.5px;
   }
 
-  /* DATE */
+  /* DATE (BIGGER) */
 
   .event-date {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    margin-bottom: 10px;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
     color: #fff;
+    letter-spacing: 0.5px;
   }
 
   /* =================================
@@ -158,23 +161,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    border-top: 1px solid rgba(255,255,255,.3);
-    border-bottom: 1px solid rgba(255,255,255,.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
-    margin-bottom: 9px;
+    margin-bottom: 12px;
   }
 
   .event-time {
-    padding: 9px 3px;
+    padding: 10px 4px;
   }
 
   .event-time + .event-time {
-    border-left: 1px solid rgba(255,255,255,.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .event-time div {
     font-family: Arial, sans-serif;
-    font-size: 21px;
+    font-size: 22px;
     font-weight: bold;
     color: #fff;
   }
@@ -184,96 +187,33 @@
     font-family: Arial, sans-serif;
     font-size: 9px;
     margin-top: 5px;
-    letter-spacing: .7px;
+    letter-spacing: 0.8px;
     color: #fff;
   }
 
   /* =================================
-     COUNTDOWN
+     VENUE LOCATION (IN SAME BOX)
   ================================= */
 
-  .countdown-title {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 1.8px;
-    margin: 9px 0;
-    text-transform: uppercase;
+  .event-venue {
+    padding-top: 2px;
+  }
+
+  .venue-name {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
     color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
   }
 
-  #countdown {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  #countdown div {
-    flex: 1;
-    background: rgba(255,255,255,.17);
-    border-radius: 8px;
-    padding: 8px 2px;
-  }
-
-  #countdown strong {
-    display: block;
+  .venue-address {
     font-family: Arial, sans-serif;
-    font-size: 19px;
-    color: #fff;
-  }
-
-  #countdown small {
-    display: block;
-    font-family: Arial, sans-serif;
-    font-size: 8px;
-    margin-top: 3px;
-    text-transform: uppercase;
-    color: #fff;
-  }
-
-  /* =================================
-     SECTION 2 - PHOTO
-  ================================= */
-
-  .photo-section {
-    min-height: 100vh;
-    padding: 55px 20px 100px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #f8e9e5;
-  }
-
-  .photo-card {
-    width: 100%;
-    max-width: 850px;
-    text-align: center;
-  }
-
-  .photo-card img {
-    width: 100%;
-    max-height: 75vh;
-    object-fit: contain;
-
-    border-radius: 12px;
-
-    box-shadow: 0 15px 40px rgba(90,50,50,.15);
-  }
-
-  .photo-caption {
-    padding: 25px 15px;
-  }
-
-  .photo-caption h2 {
-    font-size: 30px;
-    font-weight: normal;
-    margin-bottom: 12px;
-  }
-
-  .photo-caption p {
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.3px;
+    line-height: 1.4;
   }
 
   /* =================================
@@ -284,7 +224,7 @@
     position: fixed;
     z-index: 9999;
 
-    bottom: 20px;
+    bottom: 22px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -293,86 +233,75 @@
 
     text-decoration: none;
 
-    padding: 14px 30px;
+    padding: 13px 28px;
     border-radius: 50px;
 
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
+    letter-spacing: 0.5px;
 
     white-space: nowrap;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 
-    transition: background .3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
   }
 
   .map-button:hover {
     background: #674247;
+    transform: translateX(-50%) scale(1.03);
   }
 
   /* =================================
-     MOBILE DESIGN
-     Original compact layout preserved
+     DESKTOP ONLY
   ================================= */
 
-  @media (max-width: 700px) {
-
-    .hero-content {
-      top: 15vh;
-      padding: 10px;
-    }
+  @media (min-width: 701px) {
 
     .event-details {
-      width: 100%;
-      max-width: 390px;
-      padding: 14px 13px;
+      width: min(92vw, 520px);
+      padding: 24px 28px;
     }
 
     .event-title {
-      font-size: 27px;
+      font-size: 32px;
+      margin-bottom: 8px;
     }
 
     .event-date {
-      font-size: 12px;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .event-times {
+      margin-bottom: 14px;
     }
 
     .event-time {
-      padding: 9px 3px;
+      padding: 11px 6px;
     }
 
     .event-time div {
-      font-size: 21px;
+      font-size: 25px;
     }
 
     .event-time span {
-      font-size: 9px;
-    }
-
-    .countdown-title {
       font-size: 10px;
     }
 
-    #countdown {
-      gap: 5px;
+    .venue-name {
+      font-size: 20px;
     }
 
-    #countdown strong {
-      font-size: 19px;
-    }
-
-    #countdown small {
-      font-size: 8px;
-    }
-
-    .photo-caption h2 {
-      font-size: 26px;
+    .venue-address {
+      font-size: 13px;
     }
 
     .map-button {
-      bottom: 15px;
-      padding: 13px 27px;
-      font-size: 13px;
+      bottom: 26px;
+      padding: 14px 32px;
+      font-size: 14px;
     }
 
   }
@@ -381,122 +310,34 @@
 
   @media (max-width: 360px) {
 
-    .hero-content {
-      top: 14vh;
-      padding: 8px;
-    }
-
     .event-details {
-      padding: 12px 9px;
+      padding: 14px 10px;
     }
 
     .event-title {
       font-size: 24px;
     }
 
+    .event-date {
+      font-size: 14px;
+    }
+
     .event-time div {
       font-size: 19px;
     }
 
-    #countdown strong {
-      font-size: 17px;
+    .venue-name {
+      font-size: 16px;
     }
 
-  }
-
-  /* =================================
-     DESKTOP ONLY
-     WIDE + SLIM HORIZONTAL CARD
-  ================================= */
-
-  @media (min-width: 701px) {
-
-    .hero-content {
-      top: 50%;
-      transform: translateY(-50%);
-      left: 0;
-      right: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      padding: 10px 20px;
+    .venue-address {
+      font-size: 11px;
     }
 
-    .event-details {
-      margin: 0 auto;
-      width: min(92vw, 720px);
-
-      padding: 13px 22px;
-
-      display: grid;
-
-      grid-template-columns: 0.9fr 1.5fr;
-
-      grid-template-areas:
-        "title times"
-        "date countdown-title"
-        ". countdown";
-
-      column-gap: 20px;
-      row-gap: 3px;
-
-      align-items: center;
-      text-align: center;
-    }
-
-    .event-title {
-      grid-area: title;
-      font-size: 29px;
-      margin: 0;
-    }
-
-    .event-date {
-      grid-area: date;
+    .map-button {
+      bottom: 14px;
+      padding: 11px 22px;
       font-size: 12px;
-      margin: 0;
-    }
-
-    .event-times {
-      grid-area: times;
-      margin: 0;
-
-      border-top: none;
-      border-bottom: none;
-    }
-
-    .event-time {
-      padding: 8px 5px;
-    }
-
-    .event-time div {
-      font-size: 22px;
-    }
-
-    .event-time span {
-      font-size: 9px;
-    }
-
-    .countdown-title {
-      grid-area: countdown-title;
-      margin: 5px 0;
-      font-size: 10px;
-    }
-
-    #countdown {
-      grid-area: countdown;
-      gap: 6px;
-    }
-
-    #countdown div {
-      padding: 5px;
-    }
-
-    #countdown strong {
-      font-size: 17px;
-    }
-
-    #countdown small {
-      font-size: 8px;
     }
 
   }
@@ -507,7 +348,7 @@
 <body>
 
   <!-- =================================
-       SECTION 1 - HERO VIDEO
+       HERO VIDEO (SINGLE FULL SCREEN)
   ================================= -->
 
   <section class="hero">
@@ -560,16 +401,18 @@
     </div>
 
 
-    <!-- EVENT DETAILS -->
+    <!-- EVENT DETAILS CARD (CENTERED) -->
 
     <div class="hero-content">
 
       <div class="event-details">
 
+        <!-- TITLE -->
         <div class="event-title">
           Shrimant Sanskar
         </div>
 
+        <!-- DATE (BIGGER) -->
         <div class="event-date">
           Thursday, 19 November 2026
         </div>
@@ -580,87 +423,24 @@
         <div class="event-times">
 
           <div class="event-time">
-
             <div>10:30 AM</div>
-
             <span>CEREMONY BEGINS</span>
-
           </div>
-
 
           <div class="event-time">
-
             <div>12:00 PM</div>
-
             <span>LUNCH</span>
-
           </div>
 
         </div>
 
 
-        <!-- COUNTDOWN -->
+        <!-- VENUE LOCATION (IN SAME BOX) -->
 
-        <div class="countdown-title">
-          Celebration Begins In
+        <div class="event-venue">
+          <div class="venue-name">The Grand Murli</div>
+          <div class="venue-address">Near Mahavir College, Vesu, Surat</div>
         </div>
-
-        <div id="countdown">
-
-          <div>
-            <strong id="days">00</strong>
-            <small>Days</small>
-          </div>
-
-          <div>
-            <strong id="hours">00</strong>
-            <small>Hours</small>
-          </div>
-
-          <div>
-            <strong id="minutes">00</strong>
-            <small>Minutes</small>
-          </div>
-
-          <div>
-            <strong id="seconds">00</strong>
-            <small>Seconds</small>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =================================
-       SECTION 2 - ORIGINAL PHOTO
-  ================================= -->
-
-  <section class="photo-section">
-
-    <div class="photo-card">
-
-      <img
-        src="{% static 'new assets to be used/second section.jpg' %}"
-        alt="Shrimant Sanskar Celebration">
-
-      <div class="photo-caption">
-
-        <h2>We Can't Wait to Celebrate With You</h2>
-
-        <p>
-          Your presence and blessings will make
-          our special day even more memorable.
-        </p>
-
-        <p style="margin-top:15px">
-          The Grand Murli<br>
-          Near Mahavir College, Vesu, Surat
-        </p>
 
       </div>
 
@@ -682,79 +462,6 @@
     📍 VIEW ON MAP
 
   </a>
-
-
-  <!-- =================================
-       COUNTDOWN - INDIA STANDARD TIME
-  ================================= -->
-
-  <script>
-
-  function updateCountdown() {
-
-    // 19 November 2026
-    // 10:30 AM IST = 05:00 UTC
-
-    const eventTime = Date.UTC(
-      2026,
-      10,
-      19,
-      5,
-      0,
-      0
-    );
-
-    const now = Date.now();
-
-    const difference = eventTime - now;
-
-
-    if (difference <= 0) {
-
-      document.getElementById("countdown").innerHTML =
-        "<strong>Celebration Time!</strong>";
-
-      return;
-
-    }
-
-
-    const days = Math.floor(
-      difference / (1000 * 60 * 60 * 24)
-    );
-
-    const hours = Math.floor(
-      (difference / (1000 * 60 * 60)) % 24
-    );
-
-    const minutes = Math.floor(
-      (difference / (1000 * 60)) % 60
-    );
-
-    const seconds = Math.floor(
-      (difference / 1000) % 60
-    );
-
-
-    document.getElementById("days").textContent =
-      String(days).padStart(2, "0");
-
-    document.getElementById("hours").textContent =
-      String(hours).padStart(2, "0");
-
-    document.getElementById("minutes").textContent =
-      String(minutes).padStart(2, "0");
-
-    document.getElementById("seconds").textContent =
-      String(seconds).padStart(2, "0");
-
-  }
-
-  updateCountdown();
-
-  setInterval(updateCountdown, 1000);
-
-  </script>
 
 </body>
 </html>
